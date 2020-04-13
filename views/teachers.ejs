@@ -16,6 +16,9 @@
           <th>Last Name</th>
           <th>Email</th>
           <th>Gender</th>
+          <% if (readyForAction) { %>
+          <th style="text-align: center;">Action</th>
+          <% } %>
         </tr>
         <% if (data) { data.forEach(el => { %>
         <tr>
@@ -24,9 +27,12 @@
           <td><%= el.last_name %></td>
           <td><%= el.email %></td>
           <td><%= el.gender %></td>
+          <% if (readyForAction) { %>
+            <td style="text-align: center;"><a href="/teachers/<%= el.id %>/edit">Edit</a> - <a href="/teachers/<%= el.id %>/delete">Delete</a></td>
+            <% } %>
         </tr>
         <% })} %>
       </table>
-      <p>View : <a href="/students">Students</a> - <a href="/subjects">Subjects</a></p>
+      <p><a href="/teachers/add/">Add New Teacher</a> - View : <a href="/students">Students</a> - <a href="/subjects">Subjects</a></p>
 </body>
 </html>

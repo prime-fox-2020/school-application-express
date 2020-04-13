@@ -1,0 +1,36 @@
+<h3><% if (data) {%>Edit Student <% } else { %>New Student<% } %></h3>
+<% 
+let Object = {}, editing = false;
+
+if (data) {
+    Object = data[0], editing = true;
+} else {
+    editing = false;
+}
+%>
+<div class="container">
+  <form action="<%= editing == true ? `/students/${Object.id}/edit` : `/students/add` %>" method="POST">
+    <% if (editing) {%>
+    <input type="text" name="id" value="<%= Object.id %>" hidden>
+    <% } %>
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="first_name" placeholder="Student first name.." value="<%= editing == true ? Object.first_name : '' %>">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="last_name" placeholder="Student last name.." value="<%= editing == true ? Object.last_name : '' %>">
+
+    <label for="lname">Email</label>
+    <input type="text" id="email" name="email" placeholder="Student email.." value="<%= editing == true ? Object.email : '' %>">
+
+    <label for="gender">Gender</label>
+    <select id="gender" name="gender">
+      <option value="Male" <% if (editing == true && Object.gender.toLowerCase() == 'male') {%>selected<%}%>>Male</option>
+      <option value="Female" <% if (editing == true && Object.gender.toLowerCase() == 'female') {%>selected<%}%>>Female</option>
+    </select>
+
+    <label for="lname">Birth Date</label>
+    <input type="text" id="bdate" name="birth_date" placeholder="Student Birth Date (Format : 01 January 2020)" value="<%= editing == true ? Object.birth_date : '' %>">
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
