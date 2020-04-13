@@ -1,7 +1,7 @@
 const fs = require('fs')
 
 class Subject{
-    constructor(){
+    constructor(id,subject_name){
         this.id = id
         this.subject_name = subject_name
     }
@@ -26,6 +26,23 @@ class Subject{
                 cb(null,data)
             }
         })
+    }
+
+    static editSubject (id,cb){
+        this.readJSON((err,data)=>{
+            if(err){
+                cb(err,null)
+            }else{
+                let editAsId = []
+                for(var i = 0 ; i <data.length ; i ++){
+                    if(id == data[i].id){
+                        editAsId.push(new Subject (data[i].id,data[i].subject_name))
+                    }
+                }
+                cb(null,editAsId)
+            }
+        })
+
     }
 
 

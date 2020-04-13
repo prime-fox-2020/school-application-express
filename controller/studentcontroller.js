@@ -9,8 +9,21 @@ class Controller {
             if(err){
                 res.send(err)
             }else{
+                res.render("students",{data})
+            }
+        })
+    }
+
+    static editStudent(req,res){
+        const id = req.params.id
+        console.log(id)
+        Students.editStudent(id,(err,data)=>{
+            if(err){
+                res.send(err)
+            }else{
                 res.send(data)
             }
+
         })
     }
 

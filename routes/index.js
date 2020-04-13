@@ -14,6 +14,12 @@ route.get('/students',studentcontroller.viewStudents)
 route.get('/subjects',subjectcontroller.viewSubjects)
 route.get('/teachers',teachercontroller.viewTeachers)
 
+route.get('/student/:id/edit',studentcontroller.editStudent)
+
+route.get('/teacher/:id/edit',teachercontroller.editTeacher)
+
+route.get('/subject/:id/edit',subjectcontroller.editSubject)
+
 
 
 

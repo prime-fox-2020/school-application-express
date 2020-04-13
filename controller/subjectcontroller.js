@@ -10,8 +10,21 @@ class Controller {
             if(err){
                 res.send(err)
             }else{
+                res.render("subjects",{data})
+            }
+        })
+    }
+
+    static editSubject(req,res){
+        const id = req.params.id
+        console.log(id)
+        Subjects.editSubject(id,(err,data)=>{
+            if(err){
+                res.send(err)
+            }else{
                 res.send(data)
             }
+
         })
     }
 
