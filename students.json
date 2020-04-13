@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "first_name": "Joko",
+    "last_name": "Santoso",
+    "email": "jokosantoso@sekolah.id",
+    "gender": "male",
+    "birth_date": "28 Juni 2005"
+  },
+  {
+    "id": "4",
+    "first_name": "nanda",
+    "last_name": "rhp",
+    "email": "adfd@gmail.com",
+    "gender": "female",
+    "birth_date": "3 Januari 2005"
+  },
+  {
+    "id": "5",
+    "first_name": "Airell",
+    "last_name": "Jordan",
+    "email": "joeyjordan@gmail.com",
+    "gender": "male",
+    "birth_date": "21 March 1998"
+  },
+  {
+    "id": "6",
+    "first_name": "Jerome",
+    "last_name": "Lisa",
+    "email": "joojojo@gmail.com",
+    "gender": "female",
+    "birth_date": "31 Januari 2018"
+  }
+]

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Edit Students</h1>
+  <form action="/students/<%=simpen%>/edit" method="POST">
+    <input type="text" name="firstname" placeholder = "<%= kotak[0].first_name %>" autofocus><br> 
+    <input type="text" name="lastname" placeholder= "<%= kotak[0].last_name %>"> <br> 
+    <input type="text" name="email" placeholder= "<%=kotak[0].email %>" ><br> 
+    <button type="submit">Submit</button> </form> 
+ </form> 
+</body>
+</html>
