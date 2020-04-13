@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
         if (err) {
             res.send(err)
         } else {
-            res.send(data)
+            res.render('subjects', { subjects: JSON.parse(data) })
         }
     })
 })
@@ -19,18 +19,22 @@ router.get('/:id', (req, res) => {
             res.send(err)
         } else {
             data = JSON.parse(data)
+            let result = []
             const idSubjects = req.params.id
-            let result = null
-
-            for(let i = 0; i < data.length; i++){
-                if(Number(idSubjects) === data[i].id){
-                    result = data[i]
+            if (idSubjects > data.length) {
+                res.send('subject not found')
+            } else {
+                for(let i = 0; i < data.length; i++){
+                    if(Number(idSubjects) === data[i].id){
+                        result.push(data[i])
+                    }
                 }
             }
+
             if (result) {
-                res.send(result)
+                res.render('subjects', { subjects: result })
             } else {
-                res.send('not found')
+                res.send(err)
             }
         }
     })

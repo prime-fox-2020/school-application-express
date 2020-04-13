@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Students Data</h1>
+    <ul>
+        <li><a href="/">Home</a></li>
+    </ul>
+
+    <hr>
+    <ul>
+        <li><a href="/students/add">Add Student</a></li>
+    </ul>
+
+    <table border = 1 style="text-align:center; margin-left:auto; margin-right:auto; border-collapse: collapse;">
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Birth Date</th>
+            <th>Options</th>
+        </tr>
+        <% for(let i =0; i < students.length; i++) { %>
+            <tr>
+                <td><%= students[i].id %></td>
+                <td><%= students[i].first_name %></td>
+                <td><%= students[i].last_name %></td>
+                <td><%= students[i].email %></td>
+                <td><%= students[i].gender %></td>
+                <td><%= students[i].birth_date %></td>
+                <td> <a href="/students/<%= students[i].id %>/edit">Edit</a> | <a href="/students/<%= students[i].id %>/delete">Delete</a></td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+</html>

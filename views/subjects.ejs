@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subjects</title>
+</head>
+<body>
+    <body>
+        <h1 style="text-align: center;">Subject Data</h1>
+        <ul>
+            <li><a href="/">Home</a></li>
+        </ul>
+        <table border = 1 style="text-align:center; margin-left:auto; margin-right:auto; border-collapse: collapse;">
+            <tr>
+                <th>Id</th>
+                <th>Subject Name</th>
+            </tr>
+            <% for(let i =0; i < subjects.length; i++) { %>
+                <tr>
+                    <td><%= subjects[i].id %></td>
+                    <td><%= subjects[i].subject_name %></td>
+                </tr>
+            <% } %>
+        </table>      
+    </body>
+</body>
+</html>

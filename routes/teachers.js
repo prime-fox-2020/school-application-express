@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
         if (err) {
             res.send(err)
         } else {
-            res.send(data)          
+            res.render('teachers', { teachers: JSON.parse(data) })
         }
     })
 })
@@ -19,18 +19,21 @@ router.get('/:id', (req, res) => {
             res.send(err)
         } else {
             data = JSON.parse(data)
-            let result = null
-
+            let result = []
             const idTeachers = req.params.id
-            for(let i = 0; i < data.length; i++){
-                if(Number(idTeachers) === data[i].id){
-                    result = data[i]
+            if (idTeachers > data.length) {
+                res.send('student not found')
+            } else {
+                for(let i = 0; i < data.length; i++){
+                    if(Number(idTeachers) === data[i].id){
+                        result.push(data[i])
+                    }
                 }
             }
             if (result) {
-                res.send(result)
+                res.render('teachers', { teachers: result })
             } else {
-                res.send('not found')
+                res.send(err)
             }
         }
     })

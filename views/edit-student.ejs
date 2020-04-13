@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>students</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Edit Data</h1>
+    <ul>
+        <li><a href="/">Home</a></li>
+    </ul>
+    <hr>
+    <ul>
+        <li><a href="/students">Show All Data</a></li>
+    </ul>
+
+    <form action="/students/:id/edit" method="POST" style="text-align:center; margin-left:auto; margin-right:auto;">
+        <p><b>New Form to Edit</b></p>
+        <% for(let i =0; i < students.length; i++) { %>
+        <br><label>Input Id Student to Edit</label><br>
+        <input type="number" name="studentId" value="<%= students[i].id %>">
+
+        <p>
+            <label>First Name</label><br>
+            <input type="text" name="firstName" value="<%= students[i].first_name %>"/>
+        </p>
+        <p>
+            <label>Last Name</label><br>
+            <input type="text" name="lastName" value="<%= students[i].last_name %>"/>
+        </p>
+        <p>
+            <label>Email</label><br>
+            <input type="email" name="email" value="<%= students[i].email %>"/>
+        </p>
+        <p>
+            <label>Gender</label><br>
+            <select type="text" name="gender" value="<%= students[i].gender %>"/>
+                <option value="male">male</option>
+                <option value="female">female</option>
+            </select>
+        </p>
+        <p>
+            <label>Date of Birth</label><br>
+            <input type="text" name="birthDate" value="<%= students[i].birth_date %>"/>
+        </p>
+        <button type="submit">Save Data</button>
+        <% } %>
+    </form>
+</body>
+</html>

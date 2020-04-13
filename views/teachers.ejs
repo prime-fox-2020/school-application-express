@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachers</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Teachers Data</h1>
+    <ul>
+        <li><a href="/">Home</a></li>
+    </ul>
+    <table border = 1 style="text-align:center; margin-left:auto; margin-right:auto; border-collapse: collapse;">
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+        </tr>
+        <% for(let i =0; i < teachers.length; i++) { %>
+            <tr>
+                <td><%= teachers[i].id %></td>
+                <td><%= teachers[i].first_name %></td>
+                <td><%= teachers[i].last_name %></td>
+                <td><%= teachers[i].email %></td>
+                <td><%= teachers[i].gender %></td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+</html>
