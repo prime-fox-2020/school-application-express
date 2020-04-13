@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+</head>
+<body>
+    <h1>Students Data</h1>
+    <a href="/students/add">Add Student</a>
+    <% if(list_students){ %>
+        <table>
+            <tr>
+                <% for(let key in list_students[0]){ %>
+                    <th><%= key %></th>    
+                <% } %>
+                <th>Options</th>
+            </tr>
+            <% list_students.forEach( list => { %>
+                <tr>
+                    <td><%= list.id %></td>
+                    <td><%= list.first_name %></td>
+                    <td><%= list.last_name %></td>
+                    <td><%= list.email %></td>
+                    <td><%= list.gender %></td>
+                    <td><%= list.birth_date %></td>
+                    <td><a href="/students/<%= list.id %>/edit">Edit</a> | <a href="/students/<%= list.id %>/delete">Delete</a></td>
+                </tr>
+            <% }) %>
+        </table>
+    <% } %>
+</body>
+</html>

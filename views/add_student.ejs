@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+</head>
+<body>
+    <h1>Add Students Data</h1>
+    <form action="/students/add" method="post">
+        <input type="text" name="first_name" placeholder="Student First Name"><br>
+        <input type="text" name="last_name" placeholder="Student Last Name"><br>
+        <input type="text" name="email" placeholder="Student Email"><br>
+        <select name="gender">
+            <option value="" selected disabled>Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select><br>
+        <input type="text" name="birth_date" placeholder="Student Birth Date"><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
