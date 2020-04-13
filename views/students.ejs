@@ -42,7 +42,7 @@
             <td> <%= item.gender %> </td>
             <td> <%= item.birth_date %> </td>
             <td><a href="/students/<%= item.id %>/edit">Edit</a></td>
-            <td><a href="">Delete</a></td>
+            <td><a href="/students/<%= item.id %>/delete">Delete</a></td>
         </tr>
         <% }) %>
     </table>

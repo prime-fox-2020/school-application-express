@@ -51,8 +51,8 @@ router.post('/students/add', (req, res) => {
                 "birth_date": birth_date
             }
             students_list.push(temp)
-            fs.writeFileSync(`./students.json`,JSON.stringify(students_list,null,2), 'utf8')
-                    res.render('students', { students_list })
+            fs.writeFileSync(`./students.json`, JSON.stringify(students_list, null, 2), 'utf8')
+            res.render('students', { students_list })
         }
     })
 })
@@ -82,7 +82,7 @@ router.post('/students/:id?/edit', (req, res) => {
             res.send(err)
         } else {
             let students_list = JSON.parse(data)
-            
+
             const id = req.params.id
             const first_name = req.body.first_name
             const last_name = req.body.last_name
@@ -99,11 +99,50 @@ router.post('/students/:id?/edit', (req, res) => {
                 "birth_date": birth_date
             }
 
-            students_list[req.params.id-1] = temp
-            fs.writeFileSync(`./students.json`,JSON.stringify(students_list,null,2), 'utf8')
+            students_list[req.params.id - 1] = temp
+            fs.writeFileSync(`./students.json`, JSON.stringify(students_list, null, 2), 'utf8')
             res.render('students', { students_list })
         }
     })
+})
+
+// router.post('/students/:id?/delete', (req, res) => {
+//     fs.readFile('./students.json', 'utf8', (err, data) => {
+//         if (err) {
+//             res.send(err)
+//         } else {
+//             let students_list = JSON.parse(data)
+//             let length = students_list.length
+//             let afterDelete = []
+//             for (let i = 0; i < length; i++) {
+//                 if (req.params.id != students_list[i].id) {
+//                     afterDelete.push(students_list[i])
+//                 }
+//             }
+//             res.send(afterDelete)
+//         }
+//     })
+// })
+
+router.get('/students/:id/delete', (req, res) => {
+    fs.readFile('./students.json', 'utf8', (err, data) => {
+                if (err) {
+                    res.send(err)
+                } else {
+                    let students_list = JSON.parse(data)
+                    let length = students_list.length
+                    let afterDelete = []
+                    for (let i = 0; i < length; i++) {
+                        if (req.params.id != students_list[i].id) {
+                            afterDelete.push(students_list[i])
+                        }
+                    }
+                    students_list = afterDelete
+                    fs.writeFileSync(`./students.json`, JSON.stringify(students_list, null, 2), 'utf8')
+
+                    res.redirect('/students')
+                }
+            })
 })
 
 module.exports = router
