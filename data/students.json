@@ -44,13 +44,5 @@
     "last_name": "nuansa",
     "email": "123@gmail.com",
     "gender": "Male"
-  },
-  {
-    "id": 7,
-    "first_name": "getar",
-    "last_name": "nuansa",
-    "email": "123@gmail.com",
-    "gender": "Male",
-    "birth_date": "01 juli 2005"
   }
 ]

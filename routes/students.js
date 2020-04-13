@@ -77,4 +77,94 @@ studentRoutes.get('/:email', (req, res) => {
     });
 });
 
+studentRoutes.get('/:id/edit', (req, res) => {
+    fs.readFile('./data/students.json', 'utf-8', (err, data) => {
+        if (err) {
+            res.send(
+                err
+            );
+        } else {
+            let parse = JSON.parse(data);
+            for (let a = 0; a < parse.length; a++) {
+                if (parse[a].id == req.params.id) {
+                    res.render('editstudent.ejs', {
+                        object: parse[a]
+                    });
+                    break;
+                }
+            }
+        }
+    });
+});
+
+studentRoutes.post('/:id/edit', (req, res) => {
+    fs.readFile('./students.json', 'utf-8', (err, data) => {
+        if (err) {
+            res.send(
+                err
+            );
+        } else {
+            let newStudent = req.body;
+            let parse = JSON.parse(data);
+            for (let a = 0; a < parse.length; a++) {
+                if (parse[a].id == req.params.id) {
+                    parse[a] = {
+                        id: parse[a].id,
+                        first_name: newStudent.first_name,
+                        last_name: newStudent.last_name,
+                        email: newStudent.email,
+                        gender: newStudent.gender,
+                        birth_date: newStudent.birth_date
+                    };
+                    break;
+                }
+            }
+
+            fs.writeFile('./data/students.json', JSON.stringify(parse, null, 2), (err) => {
+                if (err) {
+                    res.send(
+                        err
+                    );
+                } else {
+                    res.redirect(
+                        '/student'
+                    );
+                }
+            });
+        }
+    });
+});
+
+studentRoutes.get('/:id/delete', (req, res) => {
+    fs.readFile('./data/students.json', 'utf-8', (err, data) => {
+        if (err) {
+            res.send(
+                err
+            );
+        } else {
+            let parse = JSON.parse(data);
+            let newData = [];
+            for (let a = 0; a < parse.length; a++) {
+                if (parse[a].id == req.params.id) {
+                    
+                } else {
+                    newData.push(parse[a]);
+                }
+            }
+
+            fs.writeFile('./data/students.json', JSON.stringify(newData, null, 2), (err) => {
+                if (err) {
+                    res.send(
+                        err
+                    );
+                } else {
+                    res.redirect(
+                        '/student'
+                    );
+                }
+            });
+        }
+    });
+});
+
 module.exports = studentRoutes;
