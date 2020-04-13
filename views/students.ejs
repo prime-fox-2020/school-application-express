@@ -8,6 +8,8 @@
 </head>
 <body>
   <h1>Students Data</h1>
+  <a href="/">back to home</a>
+  <a href="/students/add">add students</a>
   <table class="table table-striped">
     <tr>
       <th>Id</th>
@@ -15,6 +17,7 @@
       <th>Last Name</th>
       <th>Email</th>
       <th>Birth Date</th>
+      <th>Options</th>
     </tr>
     <% dataParse.forEach(data => { %>
       <tr>
@@ -23,6 +26,7 @@
         <td><%= data.last_name %></td>
         <td><%= data.email %></td>
         <td><%= data.birth_date %></td>
+        <td><a href="/students/<%= data.id %>/edit">edit</a> | <a href="/students/<%= data.id %>/delete">delete</a></td>
       </tr>
     <% }) %>
   </table>
