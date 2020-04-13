@@ -1,0 +1,29 @@
+<%- include ('./partials/header')%>
+<div class="container">
+  <h3 class = 'text-center mt-3'>Teachers Data</h3>
+  <table class="table table-bordered">
+    <thead class = 'thead-dark'>
+      <tr>
+      <th scope="col">Id</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Birth Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for(let studen of student) { %>
+      <tr>
+        <th scope="row"><%= studen.id %></th>
+        <td><%= studen.first_name %></td>
+        <td><%= studen.last_name %></td>
+        <td><%= studen.email %></td>
+        <td><%= studen.gender %></td>
+        <td><%= studen.birth_date %></td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+<%- include ('./partials/footer')%>
