@@ -4,11 +4,13 @@ const routes = express.Router()
 
 routes.get('/', (req, res) => {
   fs.readFile('./data/students.json', 'utf8', (err, datas) => {
+    let errorMsg
     if (err) {
-      res.send('File not found!')
+      errorMsg = 'File not found!'
+      res.render('404', errorMsg)
     } else {
       const students = JSON.parse(datas)
-      res.send(students)
+      res.render('studentShowAll', { students })
     }
   })
 })

@@ -1,15 +1,15 @@
 const express = require('express')
 const routes = express.Router()
-const teachers = require('./teachers')
-const students = require('./students')
-const subjects = require('./subjects')
+const teacherRoute = require('./teacher')
+const studentRoute = require('./student')
+const subjectRoute = require('./subject')
 
 routes.get('/', (req, res) => {
-  res.send('Welcome to School App!')
+  res.render('index')
 })
 
-routes.use('/teachers', teachers)
-routes.use('/students', students)
-routes.use('/subjects', subjects)
+routes.use('/teachers', teacherRoute)
+routes.use('/students', studentRoute)
+routes.use('/subjects', subjectRoute)
 
 module.exports = routes

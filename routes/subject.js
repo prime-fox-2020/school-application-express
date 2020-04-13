@@ -4,11 +4,13 @@ const routes = express.Router()
 
 routes.get('/', (req, res) => {
   fs.readFile('./data/subjects.json', 'utf8', (err, datas) => {
+    let errorMsg
     if (err) {
-      res.send('File not found!')
+      errorMsg = 'File not found!'
+      res.render('404', errorMsg)
     } else {
       const subjects = JSON.parse(datas)
-      res.send(subjects)
+      res.render('subjectShowAll', { subjects })
     }
   })
 })
