@@ -7,7 +7,6 @@ const routes = require('../routers')
 
 class WebServer {
     static LoadServer() {
-        console.log(__dirname)
         server.use(parser.urlencoded({extended: true}));
         server.use(parser.json());
         server.set('view engine', 'ejs');
