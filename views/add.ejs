@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Application</title>
+</head>
+<body>
+  <h1>ADD STUDENTS</h1>
+  <form action="/students/add" method="POST">
+  <input type="text" name="first_name" placeholder="your first name" autofocus required><br>
+  <input type="text" name="last_name" placeholder="your last name" required><br>
+  <input type="text" name="email" placeholder="your email" required><br>
+  <input type="radio" name="gender" value="Male"><label for="Male">Male</label>
+  <input type="radio" name="gender" value="Female"><label for="Female">Female</label><br>
+  <input type="text" name="birth_date" placeholder="ex: 1 Januari 2000" required><br>
+  <button type="submit">Register</button>
+</form>
+</body>
+</html>
