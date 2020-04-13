@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SchoolApp Students</title>
+</head>
+<body>
+        <style>
+            table, th, td {
+              border: 1px solid black;
+            }
+
+        </style>
+
+        <h3>Edit Students</h3>
+        <p>Edi through get-post method</p>
+        <form action="/students/add" method="post">
+
+            <input type="text" name="first_name" placeholder="Your First Name"><br>
+            <input type="text" name="last_name" placeholder="Your Last Name"><br>
+            <input type="text" name="email" placeholder="Your email"><br>
+            <input type="text" name="birth_date" placeholder="Your Birth Date"><br>
+
+            <button type="submit">Edit Students</button>
+
+        </form>
+    </body>
+</html>

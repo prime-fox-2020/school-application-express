@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SchoolApp Teachers</title>
+    <title>SchoolApp Students</title>
 </head>
 <body>
         <style>
@@ -12,7 +12,7 @@
             }
         </style>
 
-        <h3>Teachers Data</h3>
+        <h3>Students Data</h3>
         <table>
             <tr>
                 <th>id</th>
@@ -20,14 +20,16 @@
                 <th>last_name</th>
                 <th>email</th>
                 <th>gender</th>
+                <th>birth_date</th>
             </tr>
-            <% for(let i=0; i<teachers.length; i++) { %>
+            <% for(let i=0; i<students.length; i++) { %>
                 <tr>
-                    <td><%= teachers[i].id %></td>
-                    <td><%= teachers[i].first_name %></td>
-                    <td><%= teachers[i].last_name %></td>
-                    <td><%= teachers[i].email %></td>
-                    <td><%= teachers[i].gender %></td>
+                    <td><%= students[i].id %></td>
+                    <td><%= students[i].first_name %></td>
+                    <td><%= students[i].last_name %></td>
+                    <td><%= students[i].email %></td>
+                    <td><%= students[i].gender %></td>
+                    <td><%= students[i].birth_date %></td>
                 </tr>
             <% } %>
         </table>
