@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Students</title>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 15px;
+    }
+    th{
+      background-color : rgb(11, 180, 109)
+    }
+    h1{
+      text-align: center;
+    }
+    table{
+      margin: auto;
+    }
+    </style>
+</head>
+<body>
+  <h1>Teachers Data</h1>
+
+  <table>
+    <tr>
+      <th>id</th>
+      <th>first_name</th>
+      <th>last_name</th>
+      <th>email</th>
+      <th>gender</th>
+      
+    </tr>
+    <% for(let i = 0; i < teachers.length; i++){%>
+      <tr>
+        <td><%= teachers[i].id %></td>
+        <td><%= teachers[i].first_name %></td>
+        <td><%= teachers[i].last_name %></td>
+        <td><%= teachers[i].email %></td>
+        <td><%= teachers[i].gender %></td>
+       
+      </tr>
+    <% } %>
+  </table>
+</body>
+</html>
