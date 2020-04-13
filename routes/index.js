@@ -2,10 +2,11 @@ const { Router } = require('express')
 const router = Router()
 
 router.get('/', (req, res) => {
-    res.send('School Aplication')
+    res.render('index')
 })
 const students = require('./students')
 router.use('/students', students)
+
 
 const teachers = require('./teachers')
 router.use('/teachers', teachers)
