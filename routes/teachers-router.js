@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
             res.send(err)
         } else {
             let dataParse = JSON.parse(data)
-            res.send(`<h3>Data Teachers</h3> ${JSON.stringify(dataParse, null, 4)}`)        
+            res.render('teachers-view.ejs', {dataParse})        
         }
     })
 })
@@ -26,14 +26,17 @@ router.get('/:id', (req, res) => {
             }
 
             if (dataId.length === 0) {
-                res.send(`<h3>Data Teachers dengan ID ${req.params.id} tidak ada</h3>`)        
+                res.send(`<h3>Tidak ada data teachers dengan ID: ${req.params.id}</h3>`)        
             } else {
-                res.send(`<h3>Data Teachers with ID ${req.params.id}</h3> ${JSON.stringify(dataId, null, 4)}`)        
-            }
+                res.send(`<h3>Data Teachers dengan id ${req.params.id}</h3>
+                <p>ID: ${dataId[0].id}</p>
+                <p>Nama Lengkap: ${dataId[0].first_name} ${dataId[0].last_name}</p>
+                <p>Email: ${dataId[0].email}</p>
+                <p>Gender: ${dataId[0].gender}</p>`)        
+            } 
         }
     })
 })
-
 
 
 module.exports = router

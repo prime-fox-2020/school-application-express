@@ -5,7 +5,7 @@ const subjectsRoutes = require('./subjects-router')
 
 
 router.get('/', (req, res) => {
-    res.send("<h1>School App Home</h1>")
+    res.render('index-view.ejs')
 })
 
 router.use('/teachers', teachersRoutes)
