@@ -8,7 +8,8 @@ router.get('/', (req, res) => {
             res.send(err)
         } else {
             const parsData = JSON.parse(data)
-            res.send(parsData)
+            //res.send(parsData)
+            res.render('subjects.ejs', {parsData})
         }
     })
 })
@@ -19,14 +20,20 @@ router.get('/:id', (req, res) => {
         if(err) {
             res.send(err)
         } else {
-            const idParams = req.params.id
+            const id = req.params.id
             const parsData = JSON.parse(data)
-
+            let result = null
             for(let i=0; i<parsData.length; i++) {
-                const idParams = Number(parsData[i].id)
-                if(idParams === idParams){
-                    res.send(parsData[i])
+                const parsId =parsData[i].id
+                if(Number(id) === parsId){
+                    result = parsData[i]
                 }
+            }
+
+            if(result) {
+                res.send(result)
+            } else {
+                res.send('id not found')
             }
         }
     })

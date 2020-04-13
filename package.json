@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/prime-fox-2020/school-application-express#readme",
   "dependencies": {
+    "ejs": "^3.0.2",
     "express": "^4.17.1"
   }
 }

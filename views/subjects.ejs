@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>subjects</title>
+        <style>
+            table, th, td {
+              border: 1px solid black;
+              border-collapse: collapse;
+            }
+            th, td {
+              padding: 5px;
+              text-align: left;    
+            }
+        </style>
+    </head>
+    <body>
+        <h4>Data Subjects</h4>
+        <table>
+            <tr>
+                <th>subject_name</th>
+            </tr>
+            <% for(let i=0; i<parsData.length; i++) { %>
+                <tr>
+                    <td><%= parsData[i].subject_name %></td>
+                </tr>           
+            <% } %>
+        </table>
+    </body>
+</html>
