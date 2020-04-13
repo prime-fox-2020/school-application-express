@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Creative Tim">
+    <title>Teachers</title>
+</head>
+
+<body>
+    <!-- Top navbar -->
+    <div>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/">
+                    <i class="ni ni-tv-2 text-primary"></i> Dashboard
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/teachers">
+                    <i class="ni ni-single-02 text-yellow"></i> Teachers
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/students">
+                    <i class="ni ni-hat-3 text-blue"></i> Stundents
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/subjects">
+                    <i class="ni ni-book-bookmark text-orange"></i> Subject
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <!-- Main content -->
+    <div class="main-content">
+        <% if (teachers) { %>
+        <!-- Page content -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="card bg-default col-xl mb-5 mb-xl-0 mt-8 p-2">
+                    <div class="table-responsive">
+                        <table class="table align-items-center table-dark">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">First Name</th>
+                                    <th scope="col">Last Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Gender</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% teachers.forEach(el => { %>
+                                <tr>
+                                    <td><%= el.id %> </td>
+                                    <td><%= el.first_name %> </td>
+                                    <td><%= el.last_name %> </td>
+                                    <td><%= el.email %> </td>
+                                    <td><%= el.gender %> </td>
+                                </tr>
+                                <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Core -->
+    <script src="vendor/jquery/dist/jquery.min.js"></script>
+    <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Argon JS -->
+    <script src="js/argon.min.js"></script>
+</body>
+
+</html>
