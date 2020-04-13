@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "first_name": "Jokoaa",
+        "last_name": "Santoso",
+        "email": "jokosantoso@sekolah.id"
+    },
+    {
+        "id": 2,
+        "first_name": "Lukmans",
+        "last_name": "Riki",
+        "email": "lukmanriki@sekolah.id"
+    },
+    {
+        "id": 3,
+        "first_name": "Siti",
+        "last_name": "Nurhayati",
+        "email": "sitinurhayati@sekolah.id"
+    },
+    {
+        "id": 4,
+        "first_name": "Rika",
+        "last_name": "Risti",
+        "email": "rikaristi@sekolah.id"
+    },
+    {
+        "id": 5,
+        "first_name": "Fadhlans",
+        "last_name": "Fariz",
+        "email": "fadhlan@outlook.co.id"
+    }
+]
