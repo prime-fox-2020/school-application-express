@@ -21,6 +21,19 @@ class Backend {
         })
 
     })
+
+    static findById = (tableSelection, property, id) => new Promise((resolve, reject) => {
+
+        this.db(tableSelection)
+            .then(result => {
+                result.forEach(element => {
+                    if (element[property] == id) {
+                        resolve([element])
+                    }
+                })
+            })
+            .catch(err => reject(err))
+    })
 }
 
 module.exports = Backend
