@@ -4,30 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Students</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Students Data</h1>
-    <a href="/students/add">Add Student</a>
-    <% if(list_students){ %>
-        <table>
-            <tr>
-                <% for(let key in list_students[0]){ %>
-                    <th><%= key %></th>    
-                <% } %>
-                <th>Options</th>
-            </tr>
-            <% list_students.forEach( list => { %>
-                <tr>
-                    <td><%= list.id %></td>
-                    <td><%= list.first_name %></td>
-                    <td><%= list.last_name %></td>
-                    <td><%= list.email %></td>
-                    <td><%= list.gender %></td>
-                    <td><%= list.birth_date %></td>
-                    <td><a href="/students/<%= list.id %>/edit">Edit</a> | <a href="/students/<%= list.id %>/delete">Delete</a></td>
-                </tr>
-            <% }) %>
-        </table>
-    <% } %>
+    <div class="container mt-5">
+        <h1 class="text-center">Students Data</h1>
+        <div class="container text-center mt-3"><a href="/students/add">Add Student</a></div>
+        <% if(list_students){ %>
+            <table class="table table-striped  mt-3">
+                <thead>
+                    <tr>
+                        <% for(let key in list_students[0]){ %>
+                            <th scope="col" class="text-center"><%= key %></th>    
+                        <% } %>
+                        <th scope="col" class="text-center">Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% list_students.forEach( list => { %>
+                        <tr>
+                            <td class="text-center"><%= list.id %></td>
+                            <td class="text-center"><%= list.first_name %></td>
+                            <td class="text-center"><%= list.last_name %></td>
+                            <td class="text-center"><%= list.email %></td>
+                            <td class="text-center"><%= list.gender %></td>
+                            <td class="text-center"><%= list.birth_date %></td>
+                            <td class="text-center"><a href="/students/<%= list.id %>/edit">Edit</a> | <a href="/students/<%= list.id %>/delete">Delete</a></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } %>
+    </div>
 </body>
 </html>

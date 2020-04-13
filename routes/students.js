@@ -15,22 +15,22 @@ routes.get('/add', (req, res) =>{
     res.render('add_student')
 })
 
-// routes.get('/:email?', (req, res) => {
-//     fs.readFile('./data/students.json', 'utf8', (err,data) => {
-//         if(err) res.send(err)
-//         else{
-//             if(req.params.email && isNaN(req.params.email)){
-//                 const parseData = JSON.parse(data)
-//                 const list_students = parseData.filter( (list) => list.email === req.params.email)
-//                 res.render('students', {list_students})
-//             }
-//             else{
-//                 const list_students = JSON.parse(data)
-//                 res.render('students', {list_students})
-//             }
-//         } 
-//     })
-// })
+routes.get('/:email?', (req, res) => {
+    fs.readFile('./data/students.json', 'utf8', (err,data) => {
+        if(err) res.send(err)
+        else{
+            if(req.params.email && isNaN(req.params.email)){
+                const parseData = JSON.parse(data)
+                const list_students = parseData.filter( (list) => list.email === req.params.email)
+                res.render('students', {list_students})
+            }
+            else{
+                const list_students = JSON.parse(data)
+                res.render('students', {list_students})
+            }
+        } 
+    })
+})
 
 routes.get('/:id/edit', (req, res) => {
     fs.readFile('./data/students.json', 'utf8', (err,data) => {
