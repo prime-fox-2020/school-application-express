@@ -38,5 +38,13 @@
       "email": "ncusncussss@gmail.com",
       "gender": "female",
       "birth_date": "13 Februari 1988"
+   },
+   {
+      "id": 6,
+      "first_name": "Yoyok",
+      "last_name": "Permaficus",
+      "email": "permayok@sekolah.id",
+      "gender": "male",
+      "birth_date": "11 April 1980"
    }
 ]
