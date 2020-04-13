@@ -13,44 +13,37 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-  res.send('Welcome to School Apps');
-  // res.render('index');
+  res.render('index');
 });
 
 app.get('/teachers', (req,res) => {
   const teacher = JSON.parse(teachers);
-  res.send(teacher);
-  // res.render('teachers', {teacher : teacher});
+  res.render('teachers', {teacher : teacher});
 });
 
 app.get('/teachers/:id', (req,res) => {
-  res.send(`ini teacher page with id ${req.params.id}`);
-  // const teacher = JSON.parse(teachers);
-  // res.render('teachers', {teacher : teacher});
+  const teacher = JSON.parse(teachers);
+  res.render('teachers', {teacher : [teacher[req.params.id-1]]});
 });
 
 app.get('/students', (req,res) => {
   const student = JSON.parse(students);
-  res.send(student);
-  // res.render('students', {student : student});
+  res.render('students', {student : student});
 });
 
 app.get('/students/:email', (req,res) => {
-  res.send(`ini student page with email ${req.params.email}`);
-  // const student = JSON.parse(students);
-  // res.render('students', {student : student});
+  const student = JSON.parse(students);
+  res.render('students', {student : [student[req.params.email-1]]});
 });
 
 app.get('/subjects', (req,res) => {
   const subject = JSON.parse(subjects);
-  res.send(subject);
-  // res.render('subjects', {subject : subject});
+  res.render('subjects', {subject : subject});
 });
 
 app.get('/subjects/:id', (req,res) => {
-  res.send(`ini subject page with id ${req.params.id}`);
-  // const subject = JSON.parse(subjects);
-  // res.render('subjects', {subject : subject});
+  const subject = JSON.parse(subjects);
+  res.render('subjects', {subject : [subject[req.params.id-1]]});
 });
 
 app.listen(port, () => console.log('School app is started'));
