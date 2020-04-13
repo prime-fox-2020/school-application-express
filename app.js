@@ -12,6 +12,7 @@ app.get(`/`,(req,res)=>{
 })
 
 app.set(`view engine`,`ejs`)
+app.use(express.urlencoded({extended: false }))
 
 app.use(`/teachers`,routesTeachers)
 app.use(`/students`,routesStudents)

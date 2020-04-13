@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit data Student dengan id : <%= id %> </h1>
+
+    <form action="/students/<%=id%>/edit" method="post">
+        Firstname &nbsp;: <input type="text" name="first_name" placeholder="New First Name" autofocus required> <br>
+        Lastname &nbsp; : <input type="text" name="last_name" placeholder="New Last Name" required> <br>
+        Email   &nbsp; &nbsp; &nbsp; &nbsp;  : <input type="text" name="email" placeholder="New Email" required> <br>
+        Gender &nbsp; &nbsp; &nbsp;  : <input type="text" name="gender" placeholder="New Gender" required> <br>
+        Birth Date &nbsp;: <input type="text" name="birth_date" placeholder="ex: 25 Januari 2001" required> <br>
+
+        <button type="submit"> Submit  </button>
+    </form>
+</body>
+</html>

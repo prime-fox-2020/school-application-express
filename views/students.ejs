@@ -10,25 +10,31 @@
     <table border="2">
         <caption>Stundets Data </caption>
         <tr>
-            <td rowspan="2">  Id  </td>
-            <td colspan="5" align="center">Data Lengkap</td>
+           <td rowspan="2"> <center>Id / Nomor  </center> </td> 
+            <td colspan="5" align="center"> <center>Data Lengkap</center> </td> 
+            <td colspan="2" align="center"> <center>Ubah Data</center> </td>
         </tr>
         <tr>
-            <td>first_name</td>
-            <td>last_name</td>
-            <td>email</td>
-            <td>gender</td>
-            <td>birth_date</td>
+           <center> <td>first_name</td> </center>
+            <td><center>last_name</center></td>
+            <td><center>email</center></td>
+            <td><center>gender</center></td>
+            <td><center>birth_date</center></td>
+            <td><center>Edit Data</center></td>
+            <td> <center>Delete Data</center> </td>
             </tr>
              <% for (let i = 0; i < dataStudents.length; i++) { %>
+                <% let edit = `/students/${i+1}/edit` %>
+                <% let hapus = `/students/${i+1}/hapus` %>
             <tr>
-                <td><%= dataStudents[i].id  %></td>
-                <td><%= dataStudents[i].first_name  %></td>
-                <td><%= dataStudents[i].first_name  %></td>
-                <td><%= dataStudents[i].last_name  %></td>
-                <td><%= dataStudents[i].email  %></td>
-                <td><%= dataStudents[i].gender  %></td>
-                <td><%= dataStudents[i].birt_date %> </td>
+                <td>  <center> <%= dataStudents[i].id  %> </center></td>
+                <td> <center> <%= dataStudents[i].first_name  %> </center></td>
+                <td><center> <%= dataStudents[i].last_name  %> </center></td>
+                <td><center> <%= dataStudents[i].email  %></center> </td>
+                <td><center> <%= dataStudents[i].gender  %> </center> </td>
+                <td><center> <%= dataStudents[i].birt_date %> </center> </td>
+                <td><center> <a href= <%= edit %> > Edit </a> </center> </td>
+                <td><center> <a href= <%= hapus %> >delete</a> </center> </td>
         </tr>
             <% } %>
     </table>
