@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <title>Subject's List</title>
+</head>
+
+<body>
+    <h1> Subject's List</h1>
+        <table border = 1 >
+        <tr>
+            <th>Id</th>
+            <th>Subject Name</th>
+        </tr>
+        <% for(var i = 0; i< subjectsParse.length; i++) {%>
+        <tr>
+            <td><%= subjectsParse[i].id %></td>
+            <td><%= subjectsParse[i].subject_name %></td>
+        </tr>
+
+        <% } %>
+        <!-- <tr>
+            <td><%= subjectsParse[1].id %></td>
+            <td><%= subjectsParse[1].subject_name %></td>
+        </tr> -->
+    </table>
+</body>
