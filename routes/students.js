@@ -2,20 +2,29 @@ const routes = require('express').Router();
 const fs = require('fs');
 
 routes.get('/', (req, res) => {
-    res.send('data students');
+    fs.readFile('./data/students.json', 'utf8', (err, data) => {
+        if (err) throw err;
+        res.render('students.ejs', {
+            data: JSON.parse(data)
+        });
+    });
 });
 
 routes.get('/:email', (req, res) => {
     fs.readFile('./data/students.json', 'utf8', (err, data) => {
         if (err) throw err;
         let file = JSON.parse(data);
+        let cond = false;
         for (let i in file) {
             if (file[i].email == req.params.email) {
-                res.send(file[i]);
+                res.render('students.ejs', {
+                    data: [file[i]]
+                });
+                cond = true;
                 break;
             } 
         }
-        res.send('Email yang diinputkan tidak ada dalam data');
+        if (cond == false) res.send('Email yang diinputkan tidak ada dalam data');
     })
 });
 
