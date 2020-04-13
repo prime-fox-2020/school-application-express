@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "first_name": "bambang",
+    "last_name": "suprapto",
+    "email": "bambangsuprapto@sekolah.id",
+    "gender": "male"
+  },
+  {
+    "id": 2,
+    "first_name": "Rukmana",
+    "last_name": "Fatmawati",
+    "email": "rukmanafatmawati@sekolah.id",
+    "gender": "Female"
+  },
+  {
+    "id": 3,
+    "first_name": "Cracktiv",
+    "last_name": "Nine",
+    "email": "admin@flatlogic.com",
+    "gender": "Female"
+  },
+  {
+    "id": 4,
+    "first_name": "Bagus",
+    "last_name": "Prima",
+    "email": "admin2@flatlogic.com",
+    "gender": "Male"
+  },
+  {
+    "id": 5,
+    "first_name": "Echo",
+    "last_name": "Nine",
+    "email": "30@sekolah.id",
+    "gender": "Male"
+  }
+]

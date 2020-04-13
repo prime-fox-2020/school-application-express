@@ -1,0 +1,34 @@
+<h3><% if (data) {%>Edit Teacher <% } else { %>New Teacher<% } %></h3>
+<% 
+let Object = {}, editing = false;
+
+if (data) {
+    Object = data[0], editing = true;
+} else {
+    editing = false;
+}
+%>
+
+<div class="container">
+  <form action="<%= editing == true ? `/teachers/${Object.id}/edit` : `/teachers/add` %>" method="POST">
+    <% if (editing) {%>
+      <input type="text" name="id" value="<%= Object.id %>" hidden>
+      <% } %>
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="first_name" placeholder="Teacher first name.." value="<%= editing == true ? Object.first_name : '' %>">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="last_name" placeholder="Teacher last name.." value="<%= editing == true ? Object.last_name : '' %>">
+
+    <label for="lname">Email</label>
+    <input type="text" id="email" name="email" placeholder="Teacher email.." value="<%= editing == true ? Object.email : '' %>">
+
+    <label for="gender">Gender</label>
+    <select id="gender" name="gender">
+      <option value="Male" <% if (editing == true && Object.gender.toLowerCase() == 'male') {%>selected<%}%>>Male</option>
+      <option value="Female" <% if (editing == true && Object.gender.toLowerCase() == 'female') {%>selected<%}%>>Female</option>
+    </select>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>

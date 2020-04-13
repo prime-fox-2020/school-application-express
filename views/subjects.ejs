@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<title>School Apps - Showing Subjects</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+<link rel="icon" href="../assets/images/faveicon.ico" type="image/x-icon" />
+<link href="../assets/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <table style="width: 100%">
+        <tr>
+          <th>ID</th>
+          <th>Subjects Name</th>
+        </tr>
+        <% if (data) { data.forEach(el => { %>
+        <tr>
+          <td><a href="<%= `/subjects/${el.id}`%>"><%= el.id %></a></td>
+          <td><%= el.subject_name %></td>
+        </tr>
+        <% })} %>
+      </table>
+      <p><a href="/subjects/add/">Add New Subject</a> - View : <a href="/teachers">Teachers</a> - <a href="/students">Students</a></p>
+</body>
+</html>
