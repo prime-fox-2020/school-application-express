@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add students</title>
+</head>
+<body>
+    <h1>Add New Students</h1> 
+    <h4><a href="/students">Show All Students Data</a></h4>
+    <br>
+    <form action="/students/add" method="post">
+        <label>First Name:</label><br>
+        <input type="text" name="firstname"> <br><br>
+        
+        <label>Last Name:</label><br>
+        <input type="text" name="lastname"> <br><br>
+        
+        <label>Email:</label><br>
+        <input type="text" name="email"> <br><br>
+        
+        <label>Gender:</label><br>
+        <input type="text" name="gender"> <br><br>
+        
+        <label>Birth Date:</label><br>
+        <input type="text" name="birthdate"> <br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit students</title>
+</head>
+<body>
+    <h1>Edit Students</h1>    
+    <form action="/students/<%=id%>/edit" method="post">
+        <label>First Name:</label><br>
+        <input type="text" name="firstname" placeholder="<%=dataById.first_name%>"> <br><br>
+        
+        <label>Last Name:</label><br>
+        <input type="text" name="lastname" placeholder="<%=dataById.last_name%>"> <br><br>
+        
+        <label>Email:</label><br>
+        <input type="text" name="email" placeholder="<%=dataById.email%>"> <br><br>
+        
+        <label>Gender:</label><br>
+        <input type="text" name="gender" placeholder="<%=dataById.gender%>"> <br><br>
+        
+        <label>Birth Date:</label><br>
+        <input type="text" name="birthdate" placeholder="<%=dataById.birth_date%>"> <br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

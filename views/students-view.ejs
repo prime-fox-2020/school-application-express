@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>students</title>
+</head>
+<body>
+    <h1>Data Students</h1>
+    <button><a href="/students/add">Add Students</a></button><br><br>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>FIRST NAME</td>
+                <td>LAST NAME</td>
+                <td>EMAIL</td>
+                <td>GENDER</td>
+                <td>BIRTH DATE</td>
+                <td colspan="2">OPTIONS</td>
+            </tr>
+        </thead>
+        <tbody>
+            <%if(dataParse) {%>
+                <%for(let i = 0; i < dataParse.length; i++) {%>
+                    <tr>
+                        <td><%= dataParse[i].id %></td>
+                        <td><%= dataParse[i].first_name %></td>
+                        <td><%= dataParse[i].last_name %></td>
+                        <td><%= dataParse[i].email %></td>
+                        <td><%= dataParse[i].gender %></td>
+                        <td><%= dataParse[i].birth_date %></td>
+                        <td><button><a href="/students/<%= dataParse[i].id %>/edit">Edit</a></button></td>
+                        <td><button><a href="/students/<%= dataParse[i].id %>/delete">Delete</a></button></td>
+                    </tr>
+                <%}%>
+            <%}%>
+        </tbody>
+    </table>
+</body>
+</html>

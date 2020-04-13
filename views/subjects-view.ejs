@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>subjects</title>
+</head>
+<body>
+    <h1>Data Subjects</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>SUBJECT NAME</td>
+            </tr>
+        </thead>
+        <tbody>
+            <%if(dataParse) {%>
+                <%for(let i = 0; i < dataParse.length; i++) {%>
+                    <tr>
+                        <td><%= dataParse[i].id %></td>
+                        <td><%= dataParse[i].subject_name %></td>
+                    </tr>
+                <%}%>
+            <%}%>
+        </tbody>
+    </table>
+</body>
+</html>
