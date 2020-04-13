@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>subjects page</title>
+    <style> table, th, td { border: 1px solid black; } </style>
+  </head>
+  <body>
+    <h1>List of subjects</h1>
+    <table class="table">
+      <tr>
+        <th >ID</th>
+        <th >Subject_Name</th>
+      </tr>
+      <% for(let i = 0; i < result.length; i++) {%>
+        <tr>
+          <th ><%=result[i].id%></th>
+          <th ><%=result[i].subject_name%></th>
+        </tr>
+      <% } %>
+    </table>
+  </body>
+</html>
