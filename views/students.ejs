@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+    <title>Students's List</title>
+</head>
+
+<body>
+    <h1> Students's List</h1>
+        <table border = 1 >
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>E-mail</th>
+            <th>Options</th>
+        </tr>
+        <% for(var i = 0; i< studentsParse.length; i++) {%>
+        <tr>
+            <td><%= studentsParse[i].id %></td>
+            <td><%= studentsParse[i].first_name %></td>
+            <td><%= studentsParse[i].last_name %></td>
+            <td><%= studentsParse[i].email %></td>
+            <td>Delete | Edit</td>
+        </tr>
+
+        <% } %>
+
+    </table>
+</body>
