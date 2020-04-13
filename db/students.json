@@ -1,34 +1,56 @@
 [
   {
-    "id" : 1,
-    "first_name" : "Joko",
-    "last_name" : "Santoso",
-    "email" : "jokosantoso@sekolah.id",
-    "gender" : "male",
+    "id": 1,
+    "first_name": "Joko",
+    "last_name": "Santoso",
+    "email": "jokosantoso@sekolah.id",
+    "gender": "male",
     "birth_date": "28 Juni 2005"
   },
   {
-    "id" : 2,
-    "first_name" : "Lukman",
-    "last_name" : "Riki",
-    "email" : "lukmanriki@sekolah.id",
-    "gender" : "male",
+    "id": 2,
+    "first_name": "Lukman",
+    "last_name": "Riki",
+    "email": "lukmanriki@sekolah.id",
+    "gender": "male",
     "birth_date": "13 April 2004"
   },
   {
-    "id" : 3,
-    "first_name" : "Siti",
-    "last_name" : "Nurhayati",
-    "email" : "sitinurhayati@sekolah.id",
-    "gender" : "female",
+    "id": 3,
+    "first_name": "Siti",
+    "last_name": "Nurhayati",
+    "email": "sitinurhayati@sekolah.id",
+    "gender": "female",
     "birth_date": "12 Mei 2005"
   },
   {
-    "id" : 4,
-    "first_name" : "Rika",
-    "last_name" : "Risti",
-    "email" : "rikaristi@sekolah.id",
-    "gender" : "female",
+    "id": 4,
+    "first_name": "Rika",
+    "last_name": "Risti",
+    "email": "rikaristi@sekolah.id",
+    "gender": "female",
     "birth_date": "3 Januari 2005"
+  },
+  {
+    "id": 5,
+    "first_name": "Afifah",
+    "last_name": "Ar",
+    "email": "afif@mail.com",
+    "gender": "female"
+  },
+  {
+    "id": 6,
+    "first_name": "mike",
+    "last_name": "m",
+    "email": "mike@mail.com",
+    "gender": "male"
+  },
+  {
+    "id": 7,
+    "first_name": "Afif",
+    "last_name": "asfsf",
+    "email": "asdasf@afs.com",
+    "gender": "male",
+    "birth_date": "01 April 2020"
   }
 ]
