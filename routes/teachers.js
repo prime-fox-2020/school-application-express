@@ -30,6 +30,7 @@ router.get('/:id', (req, res) => {
                 }
             }
             if (result) {
+                // res.send(result)
                 data = data.filter(data => data.id === parseInt(req.params.id))
                 res.render('./teachers.ejs', { data })
             }

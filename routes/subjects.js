@@ -25,12 +25,12 @@ router.get('/:id', (req, res) => {
 
             let result = null
             for (var i = 0; i < data.length; i++) {
-                if (Number(idSubj) === data[i].id) {
+                if (parseInt(idSubj) === data[i].id) {
                     result = data[i]
                 }
             }
             if (result) {
-                data = data.filter(data => data.id === req.params.id)
+                data = data.filter(data => data.id === parseInt(req.params.id))
                 res.render('./subjects.ejs', { data })
             } else {
                 res.send('Id tersebut tidak ada')

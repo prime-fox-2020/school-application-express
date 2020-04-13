@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Edit Student Data</title>
+</head>
+
+<body>
+    <div class="text-center">
+        <h1 class="text-center">Edit Students Data</h1>
+        <p>Show All data</p>
+
+        <form action="" method="post">
+            <label for="">First name</label><br>
+            <input type="text" name="fname" id="" value="<%data.length==1 ? data[0].first_name : ''%> "><br>
+            <label for="">Last Name</label><br>
+            <input type="text" name="lname" id="" value="<%data.length==1 ? data[0].last_name : ''%>"><br>
+            <label for="">Email</label><br>
+            <input type="text" name="email" id="" value="<%data.length==1 ? data[0].email : ''%>"><br>
+            <label for="">Gender</label><br>
+            <input type="text" name="gender" id="" value="<%data.length==1 ? data[0].gender : ''%>"><br>
+            <label for="">Birth Date</label><br>
+            <input type="text" name="birthdate" id="" value="<%data.length==1 ? data[0].birth_date : ''%>"><br><br>
+            <button type="submit" class="btn btn-primary">Edit</button>
+        </form>
+    </div>
+</body>
+
+</html>
