@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>students page</title>
+    <style> table, th, td { border: 1px solid black; } </style>
+  </head>
+  <body>
+    <h1>List of students</h1>
+    <table class="table">
+      <tr>
+        <th >ID</th>
+        <th >First_name</th>
+        <th >Last_name</th>
+        <th >Email</th>
+        <th >Gender</th>
+        <th>Birth_date</th>
+      </tr>
+      <% for(let i = 0; i < result.length; i++) {%>
+        <tr>
+          <th ><%=result[i].id%></th>
+          <th ><%=result[i].first_name%></th>
+          <th ><%=result[i].last_name%></th>
+          <th ><%=result[i].email%></th>
+          <th ><%=result[i].gender%></th>
+          <th ><%=result[i].birthdate%></th>
+        </tr>
+      <% } %>
+    </table>
+  </body>
+</html>
