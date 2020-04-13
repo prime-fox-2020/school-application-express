@@ -15,7 +15,7 @@
 
 <body>
   <div class="container">
-    <h1>School App 0.1</h1>
+    <h1 class="center-align">School App 0.1</h1>
     <h3>Students Data</h3>
 
     <table class="highlight">
@@ -36,13 +36,13 @@
             <td><%= s.first_name %></td>
             <td><%= s.last_name %></td>
             <td><%= s.email %></td>
-            <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+            <td><a href="/students/<%= s.id %>/edit">Edit</a> | <a href="/students/<%= s.id %>/delete">Delete</a></td>
           </tr>
         <% }) %>
       </tbody>
     </table>
     <br>
-    <a class="waves-effect waves-light btn"><i class="material-icons right">add</i>Add Student</a>
+    <a href="/students/add" class="waves-effect waves-light btn"><i class="material-icons right">add</i>Add Student</a>
   </div>
 </body>
 

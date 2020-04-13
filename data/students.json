@@ -26,5 +26,19 @@
     "last_name": "Risti",
     "email": "rikaristi@sekolah.id",
     "gender": "female"
+  },
+  {
+    "id": 5,
+    "first_name": "Lembur",
+    "last_name": "Berseri",
+    "gender": "female",
+    "email": "jangan@mengeluh.com"
+  },
+  {
+    "id": 6,
+    "first_name": "Begadang",
+    "last_name": "Lagi",
+    "gender": "male",
+    "email": "begadang@tiapmalam.com"
   }
 ]
