@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Student</title>
+  <style>
+    div{
+      width: 100;
+    }
+  </style>
+</head>
+<body>
+  <div align="center">
+    <h1>Edit Student Data</h1>
+    <h4 align="center"><a href="/students">show all data</a></h4>
+    <form action="/students/<%= detail_student[0].id %>/edit" method="post">
+      <div align="center">
+        <form action="/students/add" method="POST">
+          <h3>First Name</h3>
+          <input type="text" name="first_name" value=<%=detail_student[0].first_name%>>
+          <h3>Last Name</h3>
+          <input type="text" name="last_name" value=<%=detail_student[0].last_name%>>
+          <h3>Email</h3>
+          <input type="text" name="email" value=<%= detail_student[0].email %>>
+          <h3>Gender</h3>
+          <input type="text" name="gender" value=<%= detail_student[0].gender %>>
+          <h3>Birth Date</h3>
+          <input type="text" name="birth_date" value=<%= detail_student[0].birth_date %>><br><br>
+          <button type="submit">add student</button>
+        </form>
+      </div>
+</form>
+</body>
+</html>

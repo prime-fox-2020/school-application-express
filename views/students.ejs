@@ -16,7 +16,7 @@
 </head>
 <body>
   <h1 align="center">Students Data</h1>
-  <h4 align="center"><a href="">add students</a></h4>
+  <h4 align="center"><a href="/students/add">add students</a></h4>
     <table align="center">
         <tr>
             <th>Id</th>
@@ -31,7 +31,7 @@
           <td><%= item.first_name %> </td>
           <td><%= item.last_name %> </td>
           <td><%= item.email %> </td>
-          <td><a href="">Edit</a> | <a href="">Delete</a></td>
+          <td><a href="/students/<%= item.id %>/edit">Edit</a> | <a href="/students/<%= item.id %>/delete">Delete</a></td>
         </tr>
         <% }) %>
     </table>

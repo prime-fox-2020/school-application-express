@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Student</title>
+  <style>
+    div{
+      width: 100;
+    }
+  </style>
+</head>
+<body>
+  <h1 align="center">Add Students Data</h1>
+  <h4 align="center"><a href="/students">show all data</a></h4>
+
+  <div align="center">
+    <form action="/students/add" method="POST">
+      <h3>First Name</h3>
+      <input type="text" name="first_name" placeholder="your first name" autofocus required>
+      <h3>Last Name</h3>
+      <input type="text" name="last_name" placeholder="your last name" required>
+      <h3>Email</h3>
+      <input type="text" name="email" placeholder="your email" required>
+      <h3>Gender</h3>
+      <input type="radio" name="gender" value="Male"><label for="Male">Male</label>
+      <input type="radio" name="gender" value="Female"><label for="Female">Female</label>
+      <h3>Birth Date</h3>
+      <input type="text" name="birth_date" placeholder="date month year" required><br><br>
+      <button type="submit">add student</button>
+    </form>
+  </div>
+</body>
+</html>
