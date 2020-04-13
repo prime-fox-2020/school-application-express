@@ -1,40 +1,65 @@
 const Models = require('../models')
 
+class Render {
+    
+    static page = (page, request, response) => {
+
+        console.log(request.params)
+
+        switch (true) {
+            case request.params.hasOwnProperty('id') : {
+                Models.findById(page, 'id', request.params.id)
+                    .then(result => response.render(page, {data: result}))
+                    .catch(err => response.send(err))
+            }; break;
+            
+            case request.params.hasOwnProperty('email') : {
+                Models.findById(page, 'email', request.params.email)
+                    .then(result => response.render(page, {data: result}))
+                    .catch(err => response.send(err))
+            }
+
+            default : {
+                Models.db(page)
+                    .then(result => response.render(page, {data: result}))
+                    .catch(err => response.send(err))
+            }
+        }
+    }
+
+}
+
 class Home {
 
-    static send(request, response) {
-        response.send('Ola ! ........')
+    static render(request, response) {
+        response.render('index')
     }
 
 }
 
 class Teachers {
 
-
-    static send = (request, response) => {
-        Models.db('teachers')
-            .then(result => response.send(result))
-            .catch(err => response.send(err))
+    static render = (request, response) => {
+        
+        Render.page('teachers', request, response)
     }
 
 }
 
 class Students {
     
-    static send = (request, response) => {
-        Models.db('students')
-            .then(result => response.send(result))
-            .catch(err => response.send(err))
+    static render = (request, response) => {
+
+        Render.page('students', request, response)
+
     }
 
 }
 
 class Subjects {
 
-    static send = (request, response) => {
-        Models.db('subjects')
-            .then(result => response.send(result))
-            .catch(err => response.send(err))
+    static render = (request, response) => {
+        Render.page('subjects', request, response)
     }
 
 }
