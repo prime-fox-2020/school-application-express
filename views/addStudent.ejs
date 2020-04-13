@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Form Add Student</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Main content -->
+    <div class="main-content">
+        <!-- Top navbar -->
+        <nav class="navbar navbar-top navbar-expand-md navbar-dark bg-default" id="navbar-main">
+            <div class="container-fluid">
+                <!-- Brand -->
+                <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="/teachers">Dashboard
+                    Subjects</a>
+                <!-- Form -->
+                <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
+                    <div class="form-group mb-0">
+                        <div class="input-group input-group-alternative">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-search"></i></span>
+                            </div>
+                            <input class="form-control" placeholder="Search" type="text">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </nav>
+
+        <!-- Page content -->
+        <div class="container-fluid justify-content-center mx-auto">
+            <div class="bg-light col-4 mx-auto p-3 justify-content-center">
+                <h3 class="mb-4">Add Form Student</h3>
+                <form method="POST" action='/students/add'>
+                    <div class="form-group">
+                        <label for="">First Name</label>
+                        <input type="text" class="form-control form-control-alternative" id="exampleFormControlInput1"
+                            placeholder="Jhon" name="first_name">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Last Name</label>
+                        <input type="text" class="form-control form-control-alternative" id="exampleFormControlInput1"
+                            placeholder="Doe" name="last_name">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <input type="email" class="form-control form-control-alternative" id="exampleFormControlInput1"
+                            placeholder="name@example.com" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Select Gender</label>
+                        <select class="form-control" id="exampleFormControlSelect1" name="gender">
+                            <option disabled>Choose Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Birth Date</label>
+                        <input type="date" class="form-control form-control-alternative" id="exampleFormControlInput1"
+                            placeholder="dd/mm/yy" name="birth_date">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Student</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
