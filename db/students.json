@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "first_name": "joko",
+        "last_name": "susilo",
+        "email": "bambangsuprapto@sekolah.id",
+        "gender": "male",
+        "birth_date": "25 januari 1990"
+    },
+    {
+        "id": 2,
+        "first_name": "Bagus",
+        "last_name": "Dewantoro",
+        "email": "bagusdewantoro@sekolah.id",
+        "gender": "male",
+        "birth_date": "02 februari 2001"
+    },
+    {
+        "id": 3,
+        "first_name": "Anak",
+        "last_name": "Butet",
+        "email": "anakbutet@sekolah.id",
+        "gender": "female",
+        "birth_date": "03 agustus 2005"
+    },
+    {
+        "id": 4,
+        "first_name": "Siti",
+        "last_name": "Nurbayar",
+        "email": "sinur@sekolah.id",
+        "gender": "female",
+        "birth_date": "10 april 1995"
+    }
+]
+
