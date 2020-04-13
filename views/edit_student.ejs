@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Student</title>
+</head>
+<body>
+    <h1>Edit student</h1>
+    <a href="/students">show all data</a>
+
+    <form action="/students/<%= result.id%>/edit" method="POST">
+        <h4>First name</h4>
+        <input type="text" name="first_name" placeholder="first_name" value="<%= result.first_name%>" autofocus> <br>
+        <h4>Last name</h4>
+        <input type="text" name="last_name" placeholder="last_name" value="<%= result.last_name%>" > <br>
+        <h4>Email</h4>
+        <input type="text" name="email" placeholder="email" value="<%= result.email%>" > <br>
+        <button type="submit">Edit Student</button>
+    </form>
+</body>
+</html>
