@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>Students Data</h1>
+    <a href="/students/add">add students</a>
 
     <table border="1">
         <tr>
@@ -23,7 +24,7 @@
          <td><%= el.first_name %> </td>
          <td><%= el.last_name %> </td>
          <td><%= el.email %> </td>
-         <td>EDIT | DELETE</td>
+         <td><a href="students/<%= el.id %>/edit">EDIT</a> | <a href="students/<%= el.id %>/delete">DELETE</a></td>
         </tr>
         <% }) %>
     </table>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Student</title>
+</head>
+<body>
+    <h1>Add Student</h1>
+    <form action="add" method="post">
+        <h3>First Name</h3> 
+        <input type="text" name="first_name"> 
+
+        <h3>Last Name</h3> 
+        <input type="text" name="last_name">
+
+        <h3>Email</h3> 
+        <input type="email" name="email">
+        
+        <h3>Gender</h3>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+
+        <h3>Birth Date</h3>
+        <input type="date" name="birth_date"> 
+        <br>
+        <button type="submit">ADD</button>
+    </form>
+</body>
+</html>
