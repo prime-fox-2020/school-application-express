@@ -8,9 +8,8 @@ routes.get('/', (req,res) => {
         }
         else {
             let dataSubject = JSON.parse(data)
-            // res.send(`This is subjects list\n
-            // ${dataStudent}`)
-            res.send(dataSubject)
+            // res.send(dataSubject)
+            res.render('subjects',{dataSubject})
         }
     })
 })

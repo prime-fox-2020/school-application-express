@@ -6,22 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    <h1> List of Data Teachers</h1>
+    <h1>Subjects List</h1>
 
-    <% if (dataTeacher) { %>
+    <% if (dataSubject) { %>
         <table border="1">
             <tr>
                 <th>ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
+                <th>Subject Name</th>
             </tr>
-            <% dataTeacher.forEach(item => { %>
+            <% dataSubject.forEach(item => { %>
                 <tr>
                     <td><%= item.id %></td>
-                    <td><%= item.first_name %></td>
-                    <td><%= item.last_name %></td>
-                    <td><%= item.email %></td>
+                    <td><%= item.subject_name %></td>
                 </tr>
             <% }) %>
         </table>
