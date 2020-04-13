@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        th,
+        td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>This is list of subject</h1>
+
+    <table >
+        <tr>
+            <th>No.</th>
+            <th>Subject</th>
+            
+        </tr>
+        <% subjects_list.forEach(item => { %>
+        <tr>
+            <td> <%= item.id %> </td>
+            <td> <%= item.subject_name %> </td>
+        </tr>
+        <% }) %>
+    </table>
+
+</body>
+
+</html>
