@@ -9,4 +9,15 @@ routes.get('/', (req, res) => {
     })
 });
 
+routes.get('/:email', (req, res) => {
+    fs.readFile('./students.json', 'utf8', (err, datas) => {
+        if (err) res.send('err');
+        else 
+            datas = JSON.parse(datas);
+            let dataSelected;
+            for (let data of datas) data.email == req.params.email ? dataSelected = data : '';
+            res.send(dataSelected);
+    })
+});
+
 module.exports = routes;

@@ -9,4 +9,15 @@ routes.get('/', (req, res) => {
     })
 });
 
+routes.get('/:id', (req, res) => {
+    fs.readFile('./teachers.json', 'utf8', (err, datas) => {
+        if (err) res.send('err');
+        else 
+            datas = JSON.parse(datas);
+            let dataSelected;
+            for (let data of datas) data.id == req.params.id ? dataSelected = data : '';
+            res.send(dataSelected);
+    })
+});
+
 module.exports = routes;
