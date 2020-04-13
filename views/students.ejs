@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Teachers List</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        table, th, td {
+        border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Students List</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>first_name</th>
+            <th>last_name</th>
+            <th>email</th>
+            <th>gender</th>
+            <th>birthdate</th>
+        </tr>
+    <% for(let a = 0; a < data.length; a++){%>
+        <% if(data[a].email == email){ %>
+            <tr>
+                <td><%= data[a].id %></td>
+                <td><%= data[a].first_name %></td>
+                <td><%= data[a].last_name %></td>
+                <td><%= data[a].email %></td>
+                <td><%= data[a].gender %></td>
+                <td><%= data[a].birthdate %></td>
+            </tr>
+        <% } else if(email === undefined){ %>
+            <tr>
+                <td><%= data[a].id %></td>
+                <td><%= data[a].first_name %></td>
+                <td><%= data[a].last_name %></td>
+                <td><%= data[a].email %></td>
+                <td><%= data[a].gender %></td>
+                <td><%= data[a].birthdate %></td>
+            </tr>
+        <% }%>
+    <% }%>
+    </table>
+    
+</body>
+</html>
