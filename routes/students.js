@@ -82,7 +82,7 @@ routes.post('/:id/edit', (req,res) => {
     let first_name = req.body.first_name
     let last_name = req.body.last_name
     let email = req.body.email
-    console.log(`${first_name} ${last_name} ${email} ${req.params.id}`)
+    // console.log(`${first_name} ${last_name} ${email} ${req.params.id}`)
     
     if(first_name && last_name && email){
         fs.readFile('./data/students.json','utf-8',(err,data) => {
