@@ -15,8 +15,11 @@ route.get('/subjects',subjectcontroller.viewSubjects)
 route.get('/teachers',teachercontroller.viewTeachers)
 
 route.get('/student/:id/edit',studentcontroller.editStudent)
+route.post('/student/:id/edit',studentcontroller.changeStudent)
+route.get('/student/:id/delete',studentcontroller.deleteStudent)
 
 route.get('/teacher/:id/edit',teachercontroller.editTeacher)
+route.post('/teacher/:id/edit',teachercontroller.changeTeacher)
 
 route.get('/subject/:id/edit',subjectcontroller.editSubject)
 

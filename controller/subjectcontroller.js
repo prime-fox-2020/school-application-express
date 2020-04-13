@@ -17,7 +17,7 @@ class Controller {
 
     static editSubject(req,res){
         const id = req.params.id
-        console.log(id)
+
         Subjects.editSubject(id,(err,data)=>{
             if(err){
                 res.send(err)

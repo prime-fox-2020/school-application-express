@@ -50,6 +50,28 @@ class Teacher{
     }
 
 
+    static changeTeacher (body,cb){
+        this.readJSON((err,data)=>{
+            if(err){
+                cb(err,null)
+            }else{
+                let editAs = []
+                for(var i = 0 ; i <data.length ; i ++){
+                    if(body.id == data[i].id){
+                        editAs.push(new Teacher (body.id,body.first_name,
+                            body.last_name,body.email,body.gender))
+                    }else{
+                        editAs.push(new Teacher (data[i].id,data[i].first_name,
+                            data[i].last_name,data[i].email,data[i].gender))
+                    }
+                }
+                cb(null,editAs)
+            }
+        })
+
+    }
+
+
 
 }
 
