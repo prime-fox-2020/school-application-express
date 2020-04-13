@@ -33,7 +33,7 @@ class Student {
     }
 
 
-    static editStudent (id,cb){
+    static edit (id,cb){
         this.readJSON((err,data)=>{
             if(err){
                 cb(err,null)
@@ -51,7 +51,7 @@ class Student {
 
     }
 
-    static changeStudent (body,cb){
+    static change (body,cb){
         this.readJSON((err,data)=>{
             if(err){
                 cb(err,null)
@@ -72,7 +72,7 @@ class Student {
 
     }
 
-    static deleteStudent(id,cb){
+    static delete(id,cb){
         this.readJSON((err,data)=>{
             if(err){
                 cb(err,null)
@@ -84,24 +84,31 @@ class Student {
                             data[i].last_name,data[i].email,data[i].gender))
                     }
                 }
-                cb(null,editAsId)
+                let dataEdited = editAsId
+                //// tambahin fungsi rewrite JSON disini
+                cb(null,dataEdited)
             }
         })
     }
 
+    static add(body,cb){
+        this.readJSON((err,data)=>{
+            if(err){
+                cb(err,null)
+            }else{
+                let dataEdited = []
+                for(var i = 0 ; i <data.length ; i ++){
+                    dataEdited.push(new Student (data[i].id,data[i].first_name,
+                        data[i].last_name,data[i].email,data[i].gender))
+                    }
+                    let newid = Number(data[data.length-1].id)+1
+                    dataEdited.push(new Student (newid,body.first_name,
+                        body.last_name,body.email,body.gender))
 
-
-    //static save()
-    static addStudent(){
-        let readStudents = this.readJSON
-
-
-        readStudents.push(new Student(id,first_name,last_name,email,gender))
-        fs.writeFileSync('./data/students.json')
-        
-        
+                cb(null,dataEdited)
+                }
+            })
     }
-
 }
 
 

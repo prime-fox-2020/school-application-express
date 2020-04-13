@@ -14,10 +14,9 @@ class Controller {
         })
     }
 
-    static editTeacher(req,res){
+    static edit(req,res){
         const id = req.params.id
-
-        Teachers.editTeacher(id,(err,data)=>{
+        Teachers.edit(id,(err,data)=>{
             if(err){
                 res.send(err)
             }else{
@@ -27,9 +26,9 @@ class Controller {
         })
     }
 
-    static changeTeacher(req,res){
+    static change(req,res){
         const body = req.body
-        Teachers.changeTeacher(body,(err,data)=>{
+        Teachers.change(body,(err,data)=>{
             if(err){
                 res.send(err)
             }else{
@@ -39,18 +38,40 @@ class Controller {
         })
     }
 
-
-
-
-
-
-    static addTeacher(id,first_name,last_name,email,gender){
-        return Teachers.addStudent(id,first_name,last_name,email,gender)
+    static delete(req,res){
+        const id = req.params.id
+        console.log (id)
+        Teachers.delete(id,(err,data)=>{
+            if(err){
+                res.send(err)
+            }else{
+                res.render('students',{data})
+            }
+            
+        }) 
     }
 
-    static deleteTeacher(){
-        
+    static addForm(req,res){
+        res.render("studentadd")
     }
+
+
+    static add(req,res){
+        const body = req.body
+        Teachers.add(body,(err,data)=>{
+            if(err){
+                res.send(err)
+            }else{
+                res.render('students',{data})
+            }
+
+        })
+    }
+
+
+
+
+
 
 }
 
