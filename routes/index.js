@@ -4,7 +4,16 @@ const fs = require('fs');
 const app = express();
 
 app.get('/teachers', (req, res) => {
-  res.render('teachers.ejs');
+  fs.readFile('./teachers.json', 'utf8', (err, data) => {
+    if (err) {
+      res.send(err);
+    } else {
+      const dataParse = JSON.parse(data);
+      res.render('teachers.ejs', {
+        dataParse
+      });
+    }
+  })
 })
 
 app.get('/teachers/:id', (req, res) => {
@@ -12,14 +21,25 @@ app.get('/teachers/:id', (req, res) => {
     if (err) {
       res.send(err);
     } else {
-      const dataParse = JSON.parse(data)
-      res.send(dataParse.filter(dat => dat.id == req.params.id));
+      const dataParse = JSON.parse(data).filter(dat => dat.id == req.params.id)
+      res.render('teachers.ejs', {
+        dataParse
+      });
     }
   })
 })
 
 app.get('/students', (req, res) => {
-  res.render('students.ejs');
+  fs.readFile('./students.json', 'utf8', (err, data) => {
+    if (err) {
+      res.send(err);
+    } else {
+      const dataParse = JSON.parse(data);
+      res.render('students.ejs', {
+        dataParse
+      });
+    }
+  })
 })
 
 app.get('/students/:email', (req, res) => {
@@ -27,23 +47,36 @@ app.get('/students/:email', (req, res) => {
     if (err) {
       res.send(err);
     } else {
-      const dataParse = JSON.parse(data)
-      res.send(dataParse.filter(dat => dat.email == req.params.email));
+      const dataParse = JSON.parse(data).filter(dat => dat.id == req.params.id)
+      res.render('students.ejs', {
+        dataParse
+      });
     }
   })
 })
 
 app.get('/subjects', (req, res) => {
-  res.render('subjects.ejs');
-})
-
-app.get('/subjects/:id', (req, res) => {
-  fs.readFile('./teachers.json', 'utf8', (err, data) => {
+  fs.readFile('./subjects.json', 'utf8', (err, data) => {
     if (err) {
       res.send(err);
     } else {
-      const dataParse = JSON.parse(data)
-      res.send(dataParse.filter(dat => dat.id == req.params.id));
+      const dataParse = JSON.parse(data);
+      res.render('subjects.ejs', {
+        dataParse
+      });
+    }
+  })
+})
+
+app.get('/subjects/:id', (req, res) => {
+  fs.readFile('./subjects.json', 'utf8', (err, data) => {
+    if (err) {
+      res.send(err);
+    } else {
+      const dataParse = JSON.parse(data).filter(dat => dat.id == req.params.id)
+      res.render('students.ejs', {
+        dataParse
+      });
     }
   })
 })

@@ -4,8 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Teachers Page</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-  <h1>Teachers Page</h1>
+  <h1>Teachers Data</h1>
+  <table class="table table-striped">
+    <tr>
+      <th>Id</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+    </tr>
+    <% dataParse.forEach(data => { %>
+      <tr>
+        <td><%= data.id %></td>
+        <td><%= data.first_name %></td>
+        <td><%= data.last_name %></td>
+        <td><%= data.email %></td>
+      </tr>
+    <% }) %>
+  </table>
 </body>
 </html>
