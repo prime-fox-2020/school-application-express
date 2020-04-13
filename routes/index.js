@@ -10,8 +10,8 @@ routes.get('/', (req,res) => {
     res.send('Welcome to SD Sumbangsih 18 Bogor')
 })
 
-routes.use(teacherRoutes)
-routes.use(studentRoutes)
-routes.use(subjectRoutes)
+routes.use('/teacher',teacherRoutes)
+routes.use('/student',studentRoutes)
+routes.use('/subject',subjectRoutes)
 
 module.exports = routes
