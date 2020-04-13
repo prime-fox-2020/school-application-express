@@ -1,0 +1,53 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Students Data</title>
+</head>
+<body>
+    <div>
+    <h1>Add Students Data</h1>
+    <a href="/students">show all data</a>
+    </div>   
+    <form action="" method="post">
+    <label for="">First Name</label>
+    <br>
+    <input type="text" name="fname" id="" value=" <%= data.length==1 ? data[0].first_name : '' %> ">
+    <br>
+    <label for="">Last Name</label>
+    <br>
+    <input type="text" name="lname" id="" value=" <%= data.length==1 ? data[0].last_name : '' %> ">
+    <br>
+    <label for="">Email</label>
+    <br>
+    <input type="text" name="email" id="" value=" <%= data.length==1 ? data[0].email : '' %> ">
+    <br>
+    <label for="">Gender</label>
+    <br>
+    <input type="text" name="gender" id="" value=" <%= data.length==1 ? data[0].gender : '' %> ">
+    <br>
+    <label for="">Birth Date</label>
+    <br>
+    <input type="text" name="birthdate" id="" value=" <%= data.length==1 ? data[0].birth_date : '' %> ">
+    <br>
+    <button type="submit" id='myButton'>Add Students</button>
+    </form>
+</body>
+<style>
+    div{
+        text-align: center;
+    }
+    label{
+        font-size: 28px;
+    }
+    input{
+        font-size: 28px;
+        width:100vw;
+    }
+   button{
+       font-size: 28px;
+       background-color: aqua;
+   }
+</style>
+</html>
