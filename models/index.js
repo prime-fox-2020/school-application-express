@@ -68,11 +68,7 @@ class Backend {
 
         this.db(tableSelection)
             .then(result => {
-                result.forEach(element => {
-                    if (element[property] == id) {
-                        resolve([element])
-                    }
-                })
+                resolve(result.filter(el => el[property] == id))
             })
             .catch(err => reject(err))
     })
