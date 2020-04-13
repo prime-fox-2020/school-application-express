@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Subjects Data </p>
+    <table border="2">
+    
+    <tr>
+        <td>id</td>
+        <td>subject_name</td>
+    </tr>
+    <tr>
+    <% for (let i = 0; i < dataSubjects.length; i++) { %>
+        <td><%= dataSubjects[i].id %></td>
+        <td><%= dataSubjects[i].subject_name %></td>
+    </tr>
+    <% } %>
+
+</table>
+</body>
+</html>

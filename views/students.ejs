@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <table border="2">
+        <caption>Stundets Data </caption>
+        <tr>
+            <td rowspan="2">  Id  </td>
+            <td colspan="5" align="center">Data Lengkap</td>
+        </tr>
+        <tr>
+            <td>first_name</td>
+            <td>last_name</td>
+            <td>email</td>
+            <td>gender</td>
+            <td>birth_date</td>
+            </tr>
+             <% for (let i = 0; i < dataStudents.length; i++) { %>
+            <tr>
+                <td><%= dataStudents[i].id  %></td>
+                <td><%= dataStudents[i].first_name  %></td>
+                <td><%= dataStudents[i].first_name  %></td>
+                <td><%= dataStudents[i].last_name  %></td>
+                <td><%= dataStudents[i].email  %></td>
+                <td><%= dataStudents[i].gender  %></td>
+                <td><%= dataStudents[i].birt_date %> </td>
+        </tr>
+            <% } %>
+    </table>
+    
+</body>
+</html>
