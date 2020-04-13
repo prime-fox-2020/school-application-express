@@ -11,7 +11,7 @@ routes.get('/', (req,res) => {
 })
 
 routes.use('/teacher',teacherRoutes)
-routes.use('/student',studentRoutes)
-routes.use('/subject',subjectRoutes)
+routes.use('/students',studentRoutes)
+routes.use('/subjects',subjectRoutes)
 
 module.exports = routes

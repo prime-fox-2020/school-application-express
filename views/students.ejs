@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student List</title>
 </head>
 <body>
     <h1>List of Data Student</h1>
+    <a href="/students/add">Add student</a>
 
     <% if (dataStudent) { %>
         <table border="1">
@@ -24,9 +25,9 @@
                     <td><%= item.last_name %></td>
                     <td><%= item.email %></td>
                     <td>
-                        <a href="/students/edit/<% item.id %>">Edit</a>
+                        <a href="/students/<%= item.id %>/edit">Edit</a>
                         |
-                        <a href="/students/delete/<% item.id %>">Delete</a>
+                        <a href="/students/<%= item.id %>/delete">Delete</a>
                     </td>
                 </tr>
             <% }) %>
