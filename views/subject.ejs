@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My School App</title>
+</head>
+<body>
+    <h1>List Teachers</h1>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>Subject Name</td>
+        </tr>
+        <% for (let i = 0; i< subject.length; i++) { %>
+            <tr>
+                <td><%= subject[i].id %></td>
+                <td><%= subject[i].subject_name %></td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+</html>

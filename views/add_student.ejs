@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My School App</title>
+</head>
+<body>
+    <h1>Add New Student</h1>
+    <form action="/students/add_student" method="POST">
+        <input type="text" name="firstname" placeholder="First Name" autofocus><br>
+        <input type="text" name="lastname" placeholder="Last Name"><br>
+        <input type="text" name="email" placeholder="Email"><br>
+        <select name="gender">
+            <option value="0" selected disabled>-Pilih Gender-</option>
+            <option value="1">male</option>
+            <option value="2">female</option>
+        </select><br>
+        <input type="text" name="birth_date" placeholder="date of birth"><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

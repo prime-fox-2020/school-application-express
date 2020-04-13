@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My School App</title>
+</head>
+<body>
+    <h1>Edit Student Data</h1>
+    <form action="/students/<%=paramId%>/edit" method="POST">
+        <p>First Name</p><br>
+        <input type="text" name="firstname" placeholder="<%= populatedStudent[0] %>" autofocus><br>
+        <p>Last Name</p><br>
+        <input type="text" name="lastname" placeholder="<%= populatedStudent[1] %>"><br>
+        <p>Email</p><br>
+        <input type="text" name="email" placeholder="<%= populatedStudent[2] %>"><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

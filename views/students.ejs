@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My School App</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 15px;
+        }
+        th {
+            background-color : rgb(55, 106, 247)
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>List Students</h1>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Date of Birth</th>
+            
+        </tr>
+        <% for (let i = 0; i< students.length; i++) { %>
+            <tr>
+                <td><%= students[i].id %></td>
+                <td><%= students[i].first_name %></td>
+                <td><%= students[i].last_name %></td>
+                <td><%= students[i].email %></td>
+                <td><%= students[i].gender %></td>
+                <td><%= students[i].birth_date %></td>
+                <td><a href="/students/<%= students[i].id %>/edit">Edit</a></td>
+                <td><a href="/students/<%= students[i].id %>/delete">Delete</a></td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+</html>
