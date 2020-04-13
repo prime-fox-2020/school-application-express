@@ -13,9 +13,10 @@
         </style>
     </head>
     <body>
-        <h4>Data Teachers</h4>
+        <h1 style="text-align: center;">Data Teachers</h1>
         <table>
             <tr>
+                <th>id</th>
                 <th>first_name</th>
                 <th>last_name</th>
                 <th>email</th>
@@ -23,6 +24,7 @@
             </tr>
             <% for(let i=0; i<parsData.length; i++) { %>
                 <tr>
+                    <td><%= parsData[i].id %></td>
                     <td><%= parsData[i].first_name %></td>
                     <td><%= parsData[i].last_name %></td>
                     <td><%= parsData[i].email %></td>

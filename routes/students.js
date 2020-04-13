@@ -55,22 +55,21 @@ router.get('/:id/edit', (req, res) => {
             res.send(err)
         } else {
             let result = null
-            const parsData = JSON.parse(data)
+            let parsData = JSON.parse(data)
             let idParams = Number(req.params.id)
 
-            for(let i=0; i<parsData.length; i++){
-                let idParse = parsData[i].id
+            for(let i=0; i<parsData.length; i++) {
+                let idPars = parsData[i].id
 
-                if(idParams === idParse){
+                if(idParams === idPars){
                     result = parsData[i]
-                    break
                 }
             }
 
             if(result) {
-                res.render('editStudents.ejs')
+                res.render('editStudents')
             } else {
-                res.send('id students not found')
+                res.send('id not found')
             }
         }
     })
@@ -81,11 +80,12 @@ router.post('/:id/edit', (req, res) => {
         if(err){
             res.send(err)
         } else {
-            let result = null
-            const parsData = JSON.parse(data)
             let idParams = Number(req.params.id)
-            for(let i=0; i<parsData.length; i++) {
-                if(idParams === parsData[i].id){
+            const parsData = JSON.parse(data)
+            let result = null
+
+            for(let i=0; i<parsData.length; i++){
+                if(parsData[i].id === idParams) {
                     result = parsData[i]
                     parsData[i] = {
                         id : parsData[i].id,
@@ -95,7 +95,6 @@ router.post('/:id/edit', (req, res) => {
                         gender : req.body.gender,
                         birth_date : req.body.birth_date
                     }
-                    break;
                 }
             }
 

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Add Students</title>
+        <title>Add Students Data</title>
     </head>
     <body style="position: center;"> 
-        <h1>Add Students Form</h1>
+        <h1 style="text-align: center;">Add Students Data</h1>
+        <p style="text-align: center;"><a href="/students">show all data</a></p>
         <form action='/students/add' method = 'POST'>
             <p>
                 <label>First Name</label><br>
@@ -16,7 +17,7 @@
             </p>
             <p>
                 <label>Email</label><br>
-                <input type="text" name="email"><br>
+                <input type="email" name="email"><br>
             </p>
             <label>Gender</label>
                 <input type="radio" name="gender" value="male">
@@ -28,10 +29,12 @@
                 <input type="date" name="birth_date"><br>
             </p>
             <!-- <input type="submit" name="submit" value ="Add new student"> -->
-            <button type="submit" name = "submit" value="Add new Student">Submit</button>
+            <button type="submit" name = "submit" value="add">Add Students</button>
         </form>
     </body>
     <foot>
 
     </foot>
 </html>
+
+

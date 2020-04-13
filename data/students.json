@@ -30,5 +30,13 @@
     "email": "rikaristi@sekolah.id",
     "gender": "female",
     "birth_date": "3 Januari 2005"
+  },
+  {
+    "id": 11,
+    "first_name": "akmalia",
+    "last_name": "ini",
+    "email": "akmaliavitri21@gmail.com",
+    "gender": "akmaliavitri21@gmail.com",
+    "birth_date": "2020-04-14"
   }
 ]
