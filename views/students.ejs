@@ -26,13 +26,13 @@
 <body>
     <h1>This is list of students</h1>
 
-    <table >
+    <table>
         <tr>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
             <th>Gender</th>
-            <th>Birth Date</th>
+            <th colspan="3">Birth Date</th>
         </tr>
         <% students_list.forEach(item => { %>
         <tr>
@@ -41,6 +41,8 @@
             <td> <%= item.email %> </td>
             <td> <%= item.gender %> </td>
             <td> <%= item.birth_date %> </td>
+            <td><a href="/students/<%= item.id %>/edit">Edit</a></td>
+            <td><a href="">Delete</a></td>
         </tr>
         <% }) %>
     </table>
