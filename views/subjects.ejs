@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Data</title>
+    <style>
+      table{
+        width: 20%;
+      }
+      th, td{
+        text-align: center;
+      }
+      tr:nth-child(even) {background-color: #e0e0e0;}
+    </style>
+</head>
+<body>
+  <h1 align="center">Subjects Data</h1><br>
+    <table align="center">
+        <tr>
+            <th>Id</th>
+            <th>Subject Name</th>
+        </tr>
+        <% subjectsData.forEach(item => { %>
+        <tr>
+          <td><%= item.id %> </td>
+          <td><%= item.subject_name %> </td>
+        </tr>
+        <% }) %>
+    </table>
+</body>
+</html>

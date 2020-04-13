@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Data</title>
+    <style>
+      table{
+        width: 70%;
+      }
+      th, td{
+        text-align: center;
+      }
+      tr:nth-child(even) {background-color: #e0e0e0;}
+    </style>
+</head>
+<body>
+  <h1 align="center">Students Data</h1>
+  <h4 align="center"><a href="">add students</a></h4>
+    <table align="center">
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Options</th>
+        </tr>
+        <% studentsData.forEach(item => { %>
+        <tr>
+          <td><%= item.id %> </td>
+          <td><%= item.first_name %> </td>
+          <td><%= item.last_name %> </td>
+          <td><%= item.email %> </td>
+          <td><a href="">Edit</a> | <a href="">Delete</a></td>
+        </tr>
+        <% }) %>
+    </table>
+</body>
+</html>
