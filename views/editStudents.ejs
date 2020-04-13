@@ -1,3 +1,4 @@
+ 
 <!DOCTYPE html>
 <html>
     <head>
@@ -5,30 +6,29 @@
     </head>
     <body>
         <h1 style="text-align: center;">Edit Students Data</h1>
-        <p style="text-align: center;"><a href="/students">show all data</a></p>
-        <form action="/students/:id/edit" method = "POST">
-            <p>
-                <label>Fisrt Name</label><br>
-                <input type ="text" name = "fisrt_name" ><br>
-            </p>
-            <p>
-                <label>Last Name</label><br>
-                <input type="text" name="last_name"><br>
-            </p>
-            <p>
-                <label>Email</label><br>
-                <input type="text" name="email"><br>
-            </p>
-            <p>
-                <label>Gender</label><br>
-                <input type="text" name="gender"><br>
-            </p>
-            <p>
-                <label>Birth Date</label><br>
-                <input type="date" name="birth_date"><br>
-            </p>
-            </p>
-            <input type="submit" name="submit" value ="Edit Data">
-        </form>
-    </body>
+        <p style="text-align: center;"><a href="/students">show all data</a></p>   
+        <form action="/students/<%=id%>/edit" method="post">
+            <P>
+                <label>First Name:</label><br>
+                <input type="text" name="firstname" value="<%=students.first_name%>"> <br><br>
+            </P>
+            <P>
+                <label>Last Name:</label><br>
+                <input type="text" name="lastname" value="<%=students.last_name%>"> <br><br>
+            </P>
+            <P>
+                <label>Email:</label><br>
+                <input type="email" name="email" value="<%=students.email%>"> <br><br>
+            </P>
+            <P>
+                <label>Gender:</label><br>
+                <input type="text" name="gender" value="<%=students.gender%>"> <br><br>
+            </P>
+            <P>
+                <label>Birth Date:</label><br>
+                <input type="date" name="birthdate" value="<%=students.birth_date%>"> <br><br>
+            </P>
+        <button type="submit">Edit Students</button>
+    </form>
+</body>
 </html>

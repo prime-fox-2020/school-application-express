@@ -49,64 +49,56 @@ router.post('/add', (req, res) => {
 })
 
 router.get('/:id/edit', (req, res) => {
-    //res.render('editStudents.ejs')
-    fs.readFile('./data/students.json', 'utf8', (err, data) => {
-        if(err){
+    fs.readFile("./data/students.json", "utf8", (err, data) => {
+        if (err) {
             res.send(err)
         } else {
-            let result = null
-            let parsData = JSON.parse(data)
-            let idParams = Number(req.params.id)
-
-            for(let i=0; i<parsData.length; i++) {
-                let idPars = parsData[i].id
-
-                if(idParams === idPars){
-                    result = parsData[i]
+            let dataParse = JSON.parse(data)
+            let id = null
+            let students = null
+            for (let i = 0; i < dataParse.length; i++) {
+                if (req.params.id == dataParse[i].id) {
+                    id = dataParse[i].id
+                    students = dataParse[i]
                 }
             }
 
-            if(result) {
-                res.render('editStudents')
-            } else {
-                res.send('id not found')
-            }
+            res.render('editStudents.ejs', {id, students})        
         }
-    })
-})
+    })    
+}) 
 
 router.post('/:id/edit', (req, res) => {
-    fs.readFile('./data/students.json', 'utf8', (err, data) => {
-        if(err){
+    fs.readFile("./data/students.json", "utf8", (err, data) => {
+        if (err) {
             res.send(err)
         } else {
+            let dataParse = JSON.parse(data)
+            let newData = []
             let idParams = Number(req.params.id)
-            const parsData = JSON.parse(data)
-            let result = null
-
-            for(let i=0; i<parsData.length; i++){
-                if(parsData[i].id === idParams) {
-                    result = parsData[i]
-                    parsData[i] = {
-                        id : parsData[i].id,
-                        first_name : req.body.first_name,
-                        last_name : req.body.last_name,
-                        email : req.body.email,
-                        gender : req.body.gender,
-                        birth_date : req.body.birth_date
-                    }
+            for (let i = 0; i < dataParse.length; i++) {
+                let idParse = dataParse[i].id
+                if (idParams == idParse ) {
+                    newData.push(dataParse[i])
+                    dataParse[i].first_name = req.body.firstname 
+                    dataParse[i].last_name = req.body.lastname 
+                    dataParse[i].email = req.body.email 
+                    dataParse[i].gender = req.body.gender 
+                    dataParse[i].birth_date = req.body.birthdate 
                 }
             }
-
-            fs.writeFile('./data/students.json', JSON.stringify(parsData, null, 2), (err) => {
-                if(err) {
+            
+            fs.writeFile("./data/students.json", JSON.stringify(dataParse, null, 3), (err, data) => {
+                if (err) {
                     res.send(err)
                 } else {
-                    res.redirect('/students')
+                    res.redirect('/students')        
                 }
             })
+
         }
-    })
+    })    
+    
 })
 
 
