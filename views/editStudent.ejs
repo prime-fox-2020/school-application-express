@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>School App 0.1</title>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <meta charset="UTF-8">
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="center-align">School App 0.1</h1>
+    <h3>Edit Student Data</h3>
+    <div class="row">
+      <form class="col s12" action="/students/<%= student.id %>/edit" method="post">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="first_name" name="first_name" type="text" class="validate" value="<%= student.first_name %>" autofocus>
+            <label for="first_name">First Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="last_name" name="last_name" type="text" class="validate" value="<%= student.last_name %>">
+            <label for="last_name">Last Name</label>
+          </div>
+        </div>
+        <p style="color: #9e9e9e;">Gender</p>
+        <p>
+          <label>
+            <% if (student.gender === 'male') { %>
+            <input name="gender" value="male" type="radio" class="with-gap" checked />
+            <% } else { %>
+            <input name="gender" value="male" type="radio" class="with-gap" />
+            <% } %>
+            <span>Male</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <% if (student.gender === 'female') { %>
+            <input name="gender" value="female" type="radio" class="with-gap" checked />
+            <% } else { %>
+            <input name="gender" value="female" type="radio" class="with-gap" />
+            <% } %>
+            <span>Female</span>
+          </label>
+        </p>
+        <p>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="email" name="email" type="email" class="validate" value="<%= student.email %>">
+              <label for="email">Email</label>
+            </div>
+          </div>
+          <button type="submit" class="waves-effect waves-light btn"><i class="material-icons right">edit</i>Edit
+            Student</button>
+          <a href="/students" class="waves-effect waves-light btn right">Show All Students</a>
+      </form>
+    </div>
+  </div>
+  <!--JavaScript at end of body for optimized loading-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>

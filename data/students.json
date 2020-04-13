@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "first_name": "Joko",
+    "last_name": "Santoso",
+    "email": "jokosantoso@sekolah.id",
+    "gender": "male"
+  },
+  {
+    "id": 2,
+    "first_name": "Lukman",
+    "last_name": "Riki",
+    "email": "lukmanriki@sekolah.id",
+    "gender": "female"
+  },
+  {
+    "id": 3,
+    "first_name": "Siti",
+    "last_name": "Nurhayati",
+    "email": "sitinurhayati@sekolah.id",
+    "gender": "female"
+  },
+  {
+    "id": 4,
+    "first_name": "Rika",
+    "last_name": "Risti",
+    "email": "rikaristi@sekolah.id",
+    "gender": "female"
+  },
+  {
+    "id": 5,
+    "first_name": "Lembur",
+    "last_name": "Berseri",
+    "gender": "female",
+    "email": "jangan@mengeluh.com"
+  },
+  {
+    "id": 6,
+    "first_name": "Begadang",
+    "last_name": "Lagi",
+    "gender": "male",
+    "email": "begadang@tiapmalam.com"
+  }
+]
