@@ -49,17 +49,17 @@ router.get('/:email?', (req, res) => {
     fs.readFile('./data/students.json', 'utf8', (err, data)=> {
         if(err) {res.send (err)}
         else{
-        const students = JSON.parse(data)
-        const match = students.some(key => key.email === req.params.email)
-        if (match) {
-            students = students.filter(key => key.email === req.params.email)
-                res.render('./students.ejs',{students})
-        } else {
-            res.send(`no students with particular email found.`)
             let students = JSON.parse(data)
-            res.render('student.ejs', {students})
-            
-        }
+            // const match = students.some(key => key.email === req.params.email)
+            if (req.params.email) {
+                students = students.filter(key => key.email === req.params.email)
+                    res.render('./student.ejs',{students})
+            } else {
+                res.send(`no students with particular email found.`)
+                let students = JSON.parse(data)
+                res.render('student.ejs', {students})
+                
+            }
         }
     })
 })
@@ -110,7 +110,7 @@ router.get('/:id/delete',function(req,res){
             let students = JSON.parse(data)
             let result = [] 
             for (let i = 0; i < students.length; i++) {
-                if(students[i].id !== Number(req.params.id)){
+                if(Number(students[i].id) !== Number(req.params.id)){
                     result.push(students[i])
                 }
             }

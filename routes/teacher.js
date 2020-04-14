@@ -19,13 +19,16 @@ router.get('/:id', (req, res) => {
         if(err) res.send(err)
         else{
             if(req.params.id){
-                const teachers = JSON.parse(data).filter( list => list.id === Number(req.params.id))
+                const teachers = JSON.parse(data).filter( list => Number(list.id) === Number(req.params.id))
                 res.render('teacher.ejs', {teachers})
                 // res.send(`${req.params.id}`)
             }else{
                 res.send(`invalid id of teachers`)
+                let teachers = JSON.parse(data)
+                res.render('teacher.ejs', {teachers})
             }
         } 
     })
 })
+
 module.exports = router;

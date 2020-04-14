@@ -19,10 +19,12 @@ router.get('/:id', (req, res) => {
         if(err) res.send(err)
         else{
             if(req.params.id){
-                const subjects = JSON.parse(data).filter( list => list.id === Number(req.params.id))
+                let subjects = JSON.parse(data).filter( list => Number(list.id) === Number(req.params.id))
                 res.render('subject.ejs', {subjects})
             }else{
                 res.send(`invalid id of subjects`)
+                let subjects = JSON.parse(data)
+                res.render('subject.ejs', {subjects})
             }
         } 
     })

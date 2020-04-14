@@ -68,5 +68,13 @@
     "last_name": "Dunia",
     "email": "123456",
     "birth_date": "010203"
+  },
+  {
+    "id": 10,
+    "first_name": "Hello",
+    "last_name": "World",
+    "email": "helloworld@hello.com",
+    "gender": "female",
+    "birth_date": "01 Januari 1"
   }
 ]
