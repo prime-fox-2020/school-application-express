@@ -36,7 +36,7 @@ router.post('/add', (req, res) => {
             data = JSON.parse(data)
 
             const addStudent = {
-                id: data[data.length - 1].id + 1,
+                id: data.length + 1,
                 first_name: req.body.fname,
                 last_name: req.body.lname,
                 email: req.body.email,
