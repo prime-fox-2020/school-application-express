@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>teachers</title>
+        <style>
+            table, th, td {
+              border: 1px solid black;
+              border-collapse: collapse;
+            }
+            th, td {
+              padding: 5px;
+              text-align: left;    
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="text-align: center;">Data Teachers</h1>
+        <table>
+            <tr>
+                <th>id</th>
+                <th>first_name</th>
+                <th>last_name</th>
+                <th>email</th>
+                <th>gender</th>
+            </tr>
+            <% for(let i=0; i<parsData.length; i++) { %>
+                <tr>
+                    <td><%= parsData[i].id %></td>
+                    <td><%= parsData[i].first_name %></td>
+                    <td><%= parsData[i].last_name %></td>
+                    <td><%= parsData[i].email %></td>
+                    <td><%= parsData[i].gender %></td>
+                </tr>           
+            <% } %>
+        </table>
+    </body>
+</html>

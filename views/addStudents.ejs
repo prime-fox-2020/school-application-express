@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Students Data</title>
+    </head>
+    <body style="position: center;"> 
+        <h1 style="text-align: center;">Add Students Data</h1>
+        <p style="text-align: center;"><a href="/students">show all data</a></p>
+        <form action='/students/add' method = 'POST'>
+            <p>
+                <label>First Name</label><br>
+                <input type="text" name="first_name"><br>
+            </p>
+            <p>
+                <label>Last Name</label><br>
+                <input type="text" name="last_name"><br>
+            </p>
+            <p>
+                <label>Email</label><br>
+                <input type="email" name="email"><br>
+            </p>
+            <label>Gender</label>
+                <input type="radio" name="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" name="gender" value="female">
+                <label for="female">Female</label><br>
+            <p>
+                <label>Birth Date</label><br>
+                <input type="date" name="birth_date"><br>
+            </p>
+            <!-- <input type="submit" name="submit" value ="Add new student"> -->
+            <button type="submit" name = "submit" value="add">Add Students</button>
+        </form>
+    </body>
+    <foot>
+
+    </foot>
+</html>
+
+
