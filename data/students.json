@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "first_name": "Joko",
+    "last_name": "Santoso",
+    "email": "jokosantoso@sekolah.id",
+    "gender": "male",
+    "birth_date": "28 Juni 2005"
+  },
+  {
+    "id": 2,
+    "first_name": "Lukman",
+    "last_name": "Riki",
+    "email": "lukmanriki@sekolah.id",
+    "gender": "male",
+    "birth_date": "13 April 2004"
+  },
+  {
+    "id": 3,
+    "first_name": "Siti",
+    "last_name": "Nurhayati",
+    "email": "sitinurhayati@sekolah.id",
+    "gender": "female",
+    "birth_date": "12 Mei 2005"
+  },
+  {
+    "id": 4,
+    "first_name": "Rika",
+    "last_name": "Risti",
+    "email": "rikaristi@sekolah.id",
+    "gender": "female",
+    "birth_date": "3 Januari 2005"
+  },
+  {
+    "id": 5,
+    "first_name": "Try",
+    "last_name": "Out",
+    "email": "123456",
+    "gender": "male",
+    "birth_date": "010203"
+  },
+  {
+    "id": 6,
+    "first_name": "Serigala",
+    "last_name": "Terakhir",
+    "email": "111@111",
+    "gender": "female",
+    "birth_date": "223344"
+  },
+  {
+    "id": 7,
+    "first_name": "Last",
+    "last_name": "Samurai",
+    "email": "222@222",
+    "gender": "male",
+    "birth_date": "323232"
+  },
+  {
+    "id": 8,
+    "first_name": "Bumi",
+    "last_name": "Samurai",
+    "email": "222@222",
+    "birth_date": "090909"
+  },
+  {
+    "id": 9,
+    "first_name": "Surga",
+    "last_name": "Dunia",
+    "email": "123456",
+    "birth_date": "010203"
+  },
+  {
+    "id": 10,
+    "first_name": "Hello",
+    "last_name": "World",
+    "email": "helloworld@hello.com",
+    "gender": "female",
+    "birth_date": "01 Januari 1"
+  }
+]
