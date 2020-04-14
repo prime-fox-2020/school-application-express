@@ -142,6 +142,21 @@ class Student {
         })
     }
 
+    static selectEmail(email,cb){   
+        this.readJSON((err,data)=>{
+            if(err){
+                cb(err,null)
+            }else{
+                let selectedEmail = []
+                for(var i = 0 ; i < data.length ; i++){
+                    if(data[i].email==email){
+                        selectedEmail.push(data[i])
+                    }
+                }
+                cb(null,selectedEmail)
+            }
+        })
+    }
 
 
 }

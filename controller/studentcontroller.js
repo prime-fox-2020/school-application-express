@@ -67,6 +67,19 @@ class Controller {
         })
     }
 
+    static selectEmail(req,res){
+        const email = req.params.email
+        Students.selectEmail(email,(err,data)=>{
+            if(err){
+                res.send(err)
+            }else{
+                res.render('students',{data})
+            }
+
+        })
+
+    }
+
 }
 
 

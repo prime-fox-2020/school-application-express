@@ -9,6 +9,11 @@ route.get('/', (req,res)=>{
     res.send('ini home lainnya di /students, /subjects, /teachers')
 })
 
+route.get('/students/:email',studentcontroller.selectEmail)
+route.get('/teachers/:id',teachercontroller.selectId)
+route.get('/subjects/:id',subjectcontroller.selectId)
+
+
 
 route.get('/students',studentcontroller.viewStudents)
 route.get('/subjects',subjectcontroller.viewSubjects)

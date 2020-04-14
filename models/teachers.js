@@ -140,6 +140,22 @@ class Teacher{
       })
   }
 
+  static selectId(id,cb){   
+    this.readJSON((err,data)=>{
+        if(err){
+            cb(err,null)
+        }else{
+            let selectedId = []
+            for(var i = 0 ; i < data.length ; i++){
+                if(data[i].id==id){
+                    selectedId.push(data[i])
+                }
+            }
+            cb(null,selectedId)
+        }
+    })
+}
+
 
 
 }

@@ -26,6 +26,21 @@ class Controller {
         })
     }
 
+    static selectId(req,res){
+        const id = req.params.id
+        Subjects.selectId(id,(err,data)=>{
+            if(err){
+                res.send(err)
+            }else{
+                res.render('subjects',{data})
+            }
+
+        })
+
+    }
+
+
+
     static addSubject(id,first_name,last_name,email,gender){
         return Subjects.addStudent(id,first_name,last_name,email,gender)
     }
