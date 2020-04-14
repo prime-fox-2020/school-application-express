@@ -1,0 +1,46 @@
+body {
+  text-align: center;
+}
+
+p {
+  color: #35A9DB;
+}
+
+a {
+  color: #35A9DB;
+}
+
+.table {
+  text-align: center;
+  color: #444;
+  width: 70%;
+  border: 1px solid #f2f5f7;
+  margin: auto;
+}
+
+.table tr th{
+  background: #35A9DB;
+  color: #fff;
+  font-weight: normal;
+}
+
+.table, th, td {
+  padding: 5px 10px;
+  text-align: center;
+}
+
+.table tr:hover {
+  background-color: #f5f5f5;
+}
+
+.table tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.input-text{
+  width: 30%;
+}
+
+.radio {
+  margin: 10px 10px;
+}

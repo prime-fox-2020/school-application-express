@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School App</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<h1>Add Students Data</h1>
+  <a href="/students">Show all data</a>
+  <form class="form" action="/students/add" method="POST"><br>
+    <label>First Name</label><br>
+    <input class="input-text" type="text" name="first_name" placeholder="First Name" autofocus required><br><br>
+    <label>Last Name</label><br>
+    <input class="input-text" type="text" name="last_name" placeholder="Last Name" required><br><br>
+    <label>Email</label><br>
+    <input class="input-text" type="text" name="email" placeholder="Email" required><br><br>
+    <label>Gender</label><br>
+    <input class="radio" type="radio" name="gender" value="Male"><label for="Male">Male</label>
+    <input class="radio" type="radio" name="gender" value="Female"><label for="Female">Female</label><br><br>
+    <label>Birth Date</label><br>
+    <input class="input-text" type="text" name="birth_date" placeholder="dd month yyyy" required><br><br>
+    <button type="submit">Register</button>
+</body>
+</html>

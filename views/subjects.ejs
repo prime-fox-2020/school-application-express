@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School App</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <h1>Subjects Data</h1>
+  <table class="table">
+    <thead >
+      <th>Id</th>
+      <th>Subject Name</th>
+    </thead>
+    <tbody>
+      <%for(let i = 0; i < subjects.length; i++) {%>
+        <tr>
+          <td><%=subjects[i].id%></td>
+          <td><%=subjects[i].subject_name%></td>
+        </tr>
+          <%}%>
+    </tbody>
+  </table>
+  
+
+</body>
+</html>
