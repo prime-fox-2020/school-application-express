@@ -1,8 +1,6 @@
 const Teachers = require ('../models/teachers')
 
 class Controller {
-    constructor(){
-    }
 
     static viewTeachers(req,res){
         Teachers.viewTeachers((err,data)=>{
@@ -32,7 +30,7 @@ class Controller {
             if(err){
                 res.send(err)
             }else{
-                res.render('teachers',{data})
+                res.redirect('/teachers')
             }
 
         })
@@ -45,14 +43,14 @@ class Controller {
             if(err){
                 res.send(err)
             }else{
-                res.render('students',{data})
+                res.redirect('/teachers')
             }
             
         }) 
     }
 
     static addForm(req,res){
-        res.render("studentadd")
+        res.render("teacheradd")
     }
 
 
@@ -62,7 +60,7 @@ class Controller {
             if(err){
                 res.send(err)
             }else{
-                res.render('students',{data})
+                res.redirect('/teachers')
             }
 
         })

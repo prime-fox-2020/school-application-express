@@ -1,8 +1,6 @@
 const Students = require ('../models/students')
 
 class Controller {
-    constructor(){
-    }
 
     static viewStudents(req,res){
         Students.viewStudents((err,data)=>{
@@ -33,7 +31,7 @@ class Controller {
             if(err){
                 res.send(err)
             }else{
-                res.render('students',{data})
+                res.redirect('/students')
             }
 
         })
@@ -46,7 +44,7 @@ class Controller {
             if(err){
                 res.send(err)
             }else{
-                res.render('students',{data})
+                res.redirect('/students')
             }
             
         }) 
@@ -63,7 +61,7 @@ class Controller {
             if(err){
                 res.send(err)
             }else{
-                res.render('students',{data})
+                res.redirect('/students')
             }
 
         })
