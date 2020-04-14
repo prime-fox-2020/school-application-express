@@ -1,23 +1,29 @@
 'use strict';
 const routes = require('express').Router();
-const fs = require('fs');
+const db = require('../db/config');
 
+// db.connect();
 routes.get('/', (req, res) => {
-    fs.readFile('./subjects.json', 'utf8', (err, data) => {
-        if (err) res.send('err');
-        else res.send(data);
-    })
+    db.query(`SELECT * FROM subjects`, (err, result) => {
+        if (err) res.send(err);
+        else {
+            const subjectList = result.rows;
+            res.render('subjects', {subjectList});
+            // db.end();
+        }
+    });
 });
 
 routes.get('/:id', (req, res) => {
-    fs.readFile('./subjects.json', 'utf8', (err, datas) => {
-        if (err) res.send('err');
-        else 
-            datas = JSON.parse(datas);
-            let dataSelected;
-            for (let data of datas) data.id == req.params.id ? dataSelected = data : '';
-            res.send(dataSelected);
-    })
+    db.query(`SELECT * FROM subjects WHERE id = ${req.params.id}`, (err, result) => {
+        if (err) res.send(err);
+        else {
+            const subjectList = result.rows;
+            res.render('subjects', {subjectList});
+            // db.end();
+        }
+    });
 });
+// db.end();
 
 module.exports = routes;

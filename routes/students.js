@@ -1,23 +1,29 @@
 'use strict';
 const routes = require('express').Router();
-const fs = require('fs');
+const db = require('../db/config');
 
+// db.connect();
 routes.get('/', (req, res) => {
-    fs.readFile('./students.json', 'utf8', (err, data) => {
-        if (err) res.send('err');
-        else res.send(data);
-    })
+    db.query(`SELECT * FROM students`, (err, result) => {
+        if (err) res.send(err);
+        else {
+            const studentList = result.rows;
+            res.render('students', {studentList});
+            // db.end();
+        }
+    });
 });
 
 routes.get('/:email', (req, res) => {
-    fs.readFile('./students.json', 'utf8', (err, datas) => {
-        if (err) res.send('err');
-        else 
-            datas = JSON.parse(datas);
-            let dataSelected;
-            for (let data of datas) data.email == req.params.email ? dataSelected = data : '';
-            res.send(dataSelected);
-    })
+    db.query(`SELECT * FROM students WHERE email = '${req.params.email}'`, (err, result) => {
+        if (err) res.send(err);
+        else {
+            const studentList = result.rows;
+            res.render('students', {studentList});
+            // db.end();
+        }
+    });
 });
+// db.end();
 
 module.exports = routes;

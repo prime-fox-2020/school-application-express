@@ -5,7 +5,7 @@ const studentRoutes = require('./students');
 const subjectRoutes = require('./subjects');
 
 routes.get('/', (req, res) => {
-    res.send("<h1>School Home Page</h1>");
+    res.render('./index');
 })
 routes.use('/teachers', teacherRoutes);
 routes.use('/students', studentRoutes);
