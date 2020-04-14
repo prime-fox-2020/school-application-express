@@ -45,6 +45,16 @@ class Subject{
 
     }
 
+    static rewrite(data,cb){
+        fs.writeFile(`./subjects.json`, JSON.stringify(data, null, 4), (err,data) => {
+          if (err) {
+          cb(err,null)
+          }else{
+          cb(null, "berhasil")
+          }
+      })
+    }
+
 
 }
 

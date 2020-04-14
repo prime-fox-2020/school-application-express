@@ -66,6 +66,13 @@ class Teacher{
                     }
                 }
                 cb(null,editAs)
+                this.rewrite(editAs,(err,data)=>{
+                    if(err){
+                        console.log(err)
+                    }else{
+                        console.log(data)
+                    }
+                })
             }
         })
 
@@ -86,6 +93,13 @@ class Teacher{
                 let dataEdited = editAsId
                 //// tambahin fungsi rewrite JSON disini
                 cb(null,dataEdited)
+                this.rewrite(dataEdited,(err,data)=>{
+                    if(err){
+                        console.log(err)
+                    }else{
+                        console.log(data)
+                    }
+                })
             }
         })
     }
@@ -105,9 +119,26 @@ class Teacher{
                         body.last_name,body.email,body.gender))
 
                 cb(null,dataEdited)
+                this.rewrite(dataEdited,(err,data)=>{
+                    if(err){
+                        console.log(err)
+                    }else{
+                        console.log(data)
+                    }
+                })
                 }
             })
     }
+
+    static rewrite(data,cb){
+        fs.writeFile(`./teachers.json`, JSON.stringify(data, null, 4), (err,data) => {
+          if (err) {
+          cb(err,null)
+          }else{
+          cb(null, "berhasil")
+          }
+      })
+  }
 
 
 
