@@ -4,24 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Add new teacher</title>
+    <title>Add student</title>
 </head>
 <body>
     <div class="container text-center">
-        <h1>Add new teacher</h1><br>
+        <h1>Edit student</h1><br>
         <% if (err_msg) { %>
             <p> <%= err_msg %> </p>
         <% } %>   
     
         <form action="" method="POST">
-            <input type="text" name="first_name" placeholder="First name" autofocus><br><br>
-            <input type="text" name="last_name" placeholder="Lase name"><br><br>
-            <input type="email" id="email" name="email" placeholder="Email address"><br><br>
+            <input type="text" name="first_name" value="<%= student.first_name %>" autofocus><br><br>
+            <input type="text" name="last_name" value="<%= student.last_name %>"><br><br>
+            <input type="email" id="email" name="email" value="<%= student.email %>"><br><br>
             <p>Select your gender:</p>
-            <input type="radio" id="male" name="gender" value = "male">
+            <input type="radio" id="male" name="gender" value = "male" <%= student.gender== 'male' ? 'checked' : ''%> >
             <label for="male">Male</label><br>
-            <input type="radio" id="female" name="gender" value = "female">
+            <input type="radio" id="female" name="gender" value = "female" <%= student.gender== 'female' ? 'checked' : ''%>>
             <label for="female">Female</label><br><br>
+            <label for="birth_date">Birth date</label><br>
+            <input type="date" id="birth_date" value="<%= student.birth_date %>" name="birth_date"><br><br><br>
             <button type="submit">Submit</button>
         </form>
     </div>

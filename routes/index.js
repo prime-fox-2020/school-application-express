@@ -3,7 +3,9 @@ const routes = require('express').Router();
 const teacherRoutes = require('./teachers');
 const studentRoutes = require('./students');
 const subjectRoutes = require('./subjects');
+const db = require('../db/config');
 
+db.connect();
 routes.get('/', (req, res) => {
     res.render('./index');
 })

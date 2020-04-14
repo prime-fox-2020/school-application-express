@@ -2,7 +2,6 @@
 const routes = require('express').Router();
 const db = require('../db/config');
 
-db.connect();
 routes.get('/', (req, res) => {
     const success_msg = req.query.success_msg;
     db.query(`SELECT * FROM teachers`, (err, result) => {
@@ -10,11 +9,9 @@ routes.get('/', (req, res) => {
         else {
             const teacherList = result.rows;
             res.render('teachers', {teacherList, success_msg});
-            // db.end();
         }
     });
 });
-routes 
 
 routes.get('/add', (req, res) => {
     const err_msg = req.query.err_msg;
@@ -33,13 +30,11 @@ routes.post('/add', (req, res) => {
 })
 
 routes.get('/:id?', (req, res) => {
-    // db.connect();
     db.query(`SELECT * FROM teachers WHERE id = ${req.params.id}`, (err, result) => {
         if (err) res.send(err);
         else {
             const teacherList = result.rows;
             res.render('teachers', {teacherList});
-            // db.end();
         }
     });
 });
