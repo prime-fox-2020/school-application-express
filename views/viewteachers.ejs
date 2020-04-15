@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Teachers' Information</title>
+        <meta charset='utf8'>
+    </head>
+    <body>
+        <div class='header'>
+            <h1>Teachers' Detailed Information</h1>
+        </div>
+
+        <table class='teacherstable'>
+            <tr>
+                <th>id</th>
+                <th>firstname</th>
+                <th>lastname</th>
+                <th>email</th>
+            </tr>
+            <% teachers.forEach(i => { %>
+                <tr>
+                    <td><%= i.id  %></td>
+                    <td><%= i.first_name  %></td>
+                    <td><%= i.last_name  %></td>
+                    <td><%= i.email  %></td>
+                </tr>
+            <% }) %>
+        </table>
+    </body>
+</html>
