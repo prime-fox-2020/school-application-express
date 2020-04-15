@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Subjects' Information</title>
+        <meta charset='utf8'>
+    </head>
+    <body>
+        <div class='header'>
+            <h1>Subjects' Detailed Information</h1>
+        </div>
+
+        <table class='subjectstable'>
+            <tr>
+                <th>id</th>
+                <th>subject_name</th>
+            </tr>
+            <% subjects.forEach(i => { %>
+                <tr>
+                    <td><%= i.id  %></td>
+                    <td><%= i.subject_name  %></td>
+                </tr>
+            <% }) %>
+        </table>
+    </body>
+</html>
