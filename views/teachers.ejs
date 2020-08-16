@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Teachers</title>
+</head>
+<body>
+    <h1 class="text-center">This is our teachers:</h1>
+    <nav id="navbar" class="navbar navbar-light bg-light">
+        <form class="form-inline mx-auto">
+            <button onclick="location.href = '/';" class="btn btn-outline-success mx-2" type="button">Home</button>
+            <button onclick="location.href = '/teachers';" class="btn btn-outline-success mx-2" type="button">Teachers</button>
+            <button onclick="location.href = '/students';" class="btn btn-outline-success mx-2" type="button">Students</button>
+            <button onclick="location.href = '/subjects';" class="btn btn-outline-success mx-2" type="button">Subjects</button>
+        </form>
+    </nav><br>
+    <div class="container">
+        <% if (success_msg) { %>
+            <h3 class="text-center"><%= success_msg %></h3>
+        <% } %>
+        <% if (teacherList) { %>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                    <% const keys = Object.keys(teacherList[0]) %>
+                    <% for (let key of keys) { %>
+                        <th scope="col"><%= key %></th>
+                    <% } %>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (let teacher of teacherList) { %>
+                    <tr>
+                        <% const values = Object.values(teacher) %>
+                        <% for (let data of values) { %>
+                        <td><%= data %></td>
+                        <% } %>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        <% } %>
+    </div>
+</body>
+</html>
